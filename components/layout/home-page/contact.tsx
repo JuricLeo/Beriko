@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "../ui/button";
+import { Button } from "../../ui/button";
 import { toast } from "sonner";
 import axios from "axios";
 
@@ -20,7 +20,7 @@ export default function contact() {
             najkraćem mogućem roku!
           </p>
         </div>
-        <form  method="post">
+        <form method="post">
           <div className="flex gap-x-6">
             <div className="flex flex-col mb-3">
               <label htmlFor="name" className="py-3 text-[#0D015B]">

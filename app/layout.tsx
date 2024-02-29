@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Epilogue } from "next/font/google";
 import "./globals.css";
-import Footer from "@/components/layout/footer";
-import Navbar from "@/components/layout/navbar";
+import Footer from "@/components/layout/main-layout/footer";
+import Navbar from "@/components/layout/main-layout/navbar";
 import { Toaster } from "sonner";
 import { ThemeProvider } from "@/components/theme-provider";
 

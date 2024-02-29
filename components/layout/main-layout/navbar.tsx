@@ -3,8 +3,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ModeToggle } from "../mode-toggle";
-import { Button } from "../ui/button";
+import { ModeToggle } from "../../mode-toggle";
+import { Button } from "../../ui/button";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoMdClose } from "react-icons/io";
 
@@ -24,7 +24,7 @@ export default function Navbar() {
         </div>
         <div className="gap-x-10 mr-10 hidden lg:flex">
           <p>
-            <Link href="#">Naslovna</Link>
+            <Link href="/">Naslovna</Link>
           </p>
           <p>
             <Link href="#">O nama</Link>
@@ -42,9 +42,9 @@ export default function Navbar() {
         <div className="flex items-center gap-x-4">
           <div className="hidden items-center gap-x-4 md:flex">
             <ModeToggle />
-            <Button>
-              <Link href="#">Contact</Link>
-            </Button>
+            <Link href="/contact">
+              <Button>Contact</Button>
+            </Link>
           </div>
           <RxHamburgerMenu
             size={30}

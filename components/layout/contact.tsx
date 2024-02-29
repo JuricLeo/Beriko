@@ -10,7 +10,7 @@ export default function contact() {
   }
 
   return (
-    <div className="w-full bg-primary px-4 md:px-32 py-16">
+    <section className="w-full bg-primary px-4 md:px-32 py-16">
       <div className="bg-gradient-to-b from-[#BDDCFF] to-primary rounded-md p-16 flex flex-col xl:flex-row justify-center gap-x-24 items-center">
         <div className="text-center text-3xl py-8 space-y-6 lg:py-0 text-[#0D015B]">
           <h1 className="text-3xl">Pošaljite nam upit!</h1>
@@ -81,6 +81,6 @@ export default function contact() {
           </div>
         </form>
       </div>
-    </div>
+    </section>
   );
 }

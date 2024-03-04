@@ -52,10 +52,9 @@ export default function CustomerStatements() {
                     <div className="relative w-full h-full">
                       <Image
                         src={image}
-                        alt="Image"
-                        layout="fill"
-                        objectFit="cover"
-                        className="rounded-md"
+                        alt="Carousel image"
+                        fill
+                        style={{ objectFit: "cover" }}
                       />
                     </div>
                   </CardContent>

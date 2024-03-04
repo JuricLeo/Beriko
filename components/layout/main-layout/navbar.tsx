@@ -15,12 +15,15 @@ export default function Navbar() {
     <main className="top-0 left-0 w-full shadow-xl">
       <div className="px-4 md:px-32 py-4 flex justify-between items-center">
         <div className="w-[200px] h-[60px] relative bg-slate-200">
-          <Image
-            alt=""
-            className="object-contain rounded-md"
-            src="/logo.png"
-            layout="fill"
-          />
+          <div className="relative w-[200px] h-[50px] mt-1.5">
+            <Image
+              alt="Logo"
+              className="object-contain rounded-md"
+              src="/logo.png"
+              fill
+              style={{ objectFit: "cover" }}
+            />
+          </div>
         </div>
         <div className="gap-x-10 mr-10 hidden lg:flex">
           <p>

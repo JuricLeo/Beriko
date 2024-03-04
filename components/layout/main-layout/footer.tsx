@@ -13,7 +13,7 @@ export default function Footer() {
               src="/logo.png"
               width={200}
               height={200}
-              alt=""
+              alt="Logo"
               className="bg-white"
             ></Image>
             <h2>Izgradite svoju savršenu garažu uz Beriko.</h2>

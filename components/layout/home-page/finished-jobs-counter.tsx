@@ -5,7 +5,7 @@ import CountUp from "react-countup";
 export default function FinishedJobCounter() {
   return (
     <section>
-      <div className="flex space-x-24 justify-center py-12">
+      <div className="flex space-x-15 md:space-x-24 justify-center py-12">
         <div className="flex flex-col md:flex-row space-y-12 md:space-y-0 md:space-x-24">
           <div className="text-center space-y-2">
             <p className="text-3xl font-bold">

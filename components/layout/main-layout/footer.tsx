@@ -5,8 +5,8 @@ import { IoLogoInstagram } from "react-icons/io5";
 
 export default function Footer() {
   return (
-    <footer className="text-sm overflow-y-auto bottom-0 left-0 bg-slate-600 text-slate-400 py-12">
-      <div className="px-4 md:px-32 space-y-12 md:space-y-24">
+    <footer className="text-sm overflow-y-auto bottom-0 left-0 text-slate-800 py-12 bg-[color:var(--light)]">
+      <div className="px-3 md:px-10 lg:px-24 space-y-12 md:space-y-24">
         <div className="space-y-12 md:space-y-0 flex flex-col md:flex-row md:space-x-24">
           <div className="space-y-6 min-w-[180px]">
             <Image

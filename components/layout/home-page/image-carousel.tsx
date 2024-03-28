@@ -35,17 +35,17 @@ export default function CustomerStatements() {
       <Carousel
         ref={carouselRef}
         plugins={[plugin.current]}
-        className="w-9/12 md:w-10/12 lg:w-9/12"
+        className="w-4/5"
         onMouseEnter={() => plugin.current.stop()}
         onMouseLeave={restartAutoplay}
         opts={{
-          align: "center",
+          align: "start",
           loop: true,
         }}
       >
         <CarouselContent>
           {images.map((image, index) => (
-            <CarouselItem key={index} className="basis-4/5">
+            <CarouselItem key={index} className="pl-1 basis-3/4">
               <div className="p-1">
                 <Card>
                   <CardContent className="flex aspect-video items-center justify-center p-0">
@@ -63,6 +63,8 @@ export default function CustomerStatements() {
             </CarouselItem>
           ))}
         </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
       </Carousel>
     </section>
   );

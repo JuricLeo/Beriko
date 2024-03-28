@@ -8,6 +8,14 @@ import { Button } from "../../ui/button";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoMdClose } from "react-icons/io";
 
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { ChevronDown } from "lucide-react";
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolling, setScrolling] = useState(false);
@@ -27,39 +35,35 @@ export default function Navbar() {
   }, [scrolling]);
 
   return (
-    <nav className="max-w-full fixed top-0 left-0 right-0 z-50 transition-all duration-700">
+    <nav className="max-w-full fixed top-0 left-0 right-0 z-50">
       <div
-        className={`px-3 md:px-10 lg:px-32 py-4 flex justify-between items-center ${
-          scrolling ? "bg-black" : "bg-transparent"
+        className={`px-3 md:px-10 lg:px-24 py-6 flex justify-between items-center transition-all duration-300 border-b-2 border-black ${
+          scrolling ? "bg-[color:var(--light)] border-none" : "bg-transparent"
         }`}
       >
-        <div className="w-[200px] h-[60px] relative rounded-md bg-slate-200">
-          <Image
-            alt="Beriko"
-            className="object-contain "
-            src="/logo.png"
-            layout="fill"
-          />
-        </div>
-        <div className="gap-x-10 mr-10 hidden lg:flex">
-          <p>
+        <div className="flex items-center">
+          <Image alt="Beriko" src="/logo.png" width={200} height={200} />
+          <div className="gap-x-10 mr-10 hidden lg:flex">
             <Link href="/">Naslovna</Link>
-          </p>
-          <p>
             <Link href="#">O nama</Link>
-          </p>
-          <p>
             <Link href="#">Recenzije</Link>
-          </p>
-          <p>
-            <Link href="#">Galerija</Link>
-          </p>
-          <p>
-            <Link href="#">Blog</Link>
-          </p>
-          <p>
-            <Link href="#">Katalog proizvoda</Link>
-          </p>
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center">
+                Ostalo <ChevronDown className="w-4 h-4 ml-2" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuItem>
+                  <Link href="#">Galerija</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link href="#">Blog</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link href="#">Katalog proizvoda</Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
         </div>
         <div className="flex items-center gap-x-4">
           <div className="hidden items-center gap-x-4 md:flex">
@@ -105,10 +109,11 @@ export default function Navbar() {
               <p>
                 <Link href="#">Katalog proizvoda</Link>
               </p>
-              <div className="flex items-center gap-x-4 md:hidden pt-12">
+              <div className="flex items-center gap-x-4 md:hidden pt-12 text-black dark:text-white">
                 <Button variant="secondary">
                   <Link href="#">Contact</Link>
                 </Button>
+                <ModeToggle />
               </div>
             </div>
           </div>

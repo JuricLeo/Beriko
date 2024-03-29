@@ -4,12 +4,14 @@ import FinishedJobCounter from "@/components/layout/home-page/finished-jobs-coun
 import Testimonials from "@/components/layout/home-page/testimonials";
 import Hero from "@/components/layout/home-page/hero";
 import FeatureStrenght from "@/components/layout/home-page/feature-strenght";
+import QualitySection from "@/components/layout/home-page/quality-section";
 
 export default function Home() {
   return (
     <main>
       <Hero />
       <FeatureStrenght />
+      <QualitySection />
     </main>
   );
 }

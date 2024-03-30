@@ -1,85 +1,57 @@
 "use client";
 
-import { Button } from "../../ui/button";
-import { toast } from "sonner";
-import axios from "axios";
+import { Mail, MapPin, Phone } from "lucide-react";
+import Link from "next/link";
+import { FaFacebookF, FaXTwitter } from "react-icons/fa6";
+import { IoLogoInstagram } from "react-icons/io5";
 
 export default function contact() {
-  interface FormData {
-    [key: string]: string;
-  }
-
   return (
-    <section className="w-full bg-primary px-4 md:px-10 lg:px-32 py-16">
-      <div className="bg-gradient-to-b from-[#BDDCFF] to-primary rounded-md p-10 flex flex-col xl:flex-row justify-center gap-x-24 items-center w-full ">
-        <div className="text-center w-full text-3xl py-8 space-y-6 lg:py-0 text-[#0D015B]">
-          <h1 className="text-3xl">Pošaljite nam upit!</h1>
-          <p className="text-xl">
-            Imate pitanja, prijedloge ili želite ostati u toku s našim
-            novostima? Pišite nam putem donjeg obrasca i javit ćemo vam se u
-            najkraćem mogućem roku!
-          </p>
+    <section className="relative py-12 sm:py-24 lg:py-10 px-3 md:px-10 lg:px-24 bg-primary/30 h-[35rem]">
+      <div className="bg-primary text-white w-[25rem] h-[25rem] mt-10 absolute z-10 shadow-md p-8">
+        <h2 className="text-2xl font-semibold">Kontakt Info</h2>
+        <div className="mt-8 space-y-8">
+          <div className="flex items-top">
+            <MapPin className="mr-6 w-11 h-11" />
+            <p>HR-48362 KLOŠTAR PODRAVSKI, Sjepana Radića 2</p>
+          </div>
+          <div className="flex items-center">
+            <Mail className="mr-6 w-8 h-8" />
+            <p>beriko@beriko.com</p>
+          </div>
+          <div className="flex items-center">
+            <Phone className="mr-6 w-8 h-8" />
+            <p>+385 98 64 62 60</p>
+          </div>
         </div>
-        <form method="post" className="w-full md:w-10/12">
-          <div className=" w-full md:flex md:justify-around lg:justify-start gap-x-10">
-            <div className="flex flex-col flex-1 mb-5">
-              <label htmlFor="name" className="text-[#0D015B]">
-                Ime
-              </label>
-              <input
-                id="name"
-                type="text"
-                name="name"
-                className="w-full h-[50px] pl-4 rounded-xl"
-                placeholder="Ime"
-              />
-            </div>
-            <div className="flex flex-col flex-1 mb-5">
-              <label htmlFor="surname" className="text-[#0D015B]">
-                Prezime
-              </label>
-              <input
-                id="surname"
-                type="text"
-                name="surname"
-                className="lg:w-full h-[50px] pl-4 rounded-xl"
-                placeholder="Prezime"
-              />
-            </div>
-          </div>
-          <div className="flex flex-col mb-5">
-            <label htmlFor="email" className="text-[#0D015B]">
-              Email
-            </label>
-            <input
-              id="email"
-              type="text"
-              name="email"
-              className="w-full h-[50px] pl-4 rounded-xl"
-              placeholder="Email"
-            />
-          </div>
-          <div className="flex flex-col">
-            <label htmlFor="message" className=" text-[#0D015B]">
-              Upit
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              className="w-full h-[200px] pl-4 resize-none pt-3 rounded-xl"
-              placeholder="Upit"
-            />
-          </div>
-          <div className="flex justify-start mt-8">
-            <Button
-              type="submit"
-              variant="secondary"
-              className="text-black w-full py-4  rounded-3xl md:w-4/12"
-            >
-              Pošalji
-            </Button>
-          </div>
-        </form>
+        <div className="flex justify-start mt-12 space-x-4">
+          <Link
+            href="#"
+            className="rounded-md p-4 bg-newWhite text-newBlack hover:opacity-75 duration-300"
+          >
+            <FaFacebookF size={16} />
+          </Link>
+          <Link
+            href="#"
+            className="rounded-md p-4 bg-newWhite text-newBlack hover:opacity-75 duration-300"
+          >
+            <FaXTwitter size={16} />
+          </Link>
+          <Link
+            href="#"
+            className="rounded-md p-4 bg-newWhite text-newBlack hover:opacity-75 duration-300"
+          >
+            <IoLogoInstagram size={16} />
+          </Link>
+        </div>
+      </div>
+      <div className="bg-white w-[80%] h-[30rem] ml-48 relative shadow-md">
+        <div className="ml-60 pt-16">
+          <h1 className="text-2xl font-semibold">Pošaljite nam upit!</h1>
+          <form>
+            <label></label>
+          </form>
+        </div>
       </div>
     </section>
   );

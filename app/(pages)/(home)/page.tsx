@@ -16,7 +16,10 @@ export default function Home() {
       <QualitySection />
       <ImageSlider />
       <FeatureGarages />
+      <FinishedJobCounter />
       <ServicesSection />
+      <Testimonials />
+      <Contact />
     </main>
   );
 }

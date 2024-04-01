@@ -8,6 +8,7 @@ import QualitySection from "@/components/layout/home-page/quality-section";
 import FeatureGarages from "@/components/layout/home-page/feature-garages";
 import ServicesSection from "@/components/layout/home-page/services-section";
 import FAQSection from "@/components/layout/home-page/faqs-section";
+import Map from "@/components/layout/home-page/map";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <ServicesSection />
       <Testimonials />
       <FAQSection />
+      <Map />
       <Contact />
     </main>
   );

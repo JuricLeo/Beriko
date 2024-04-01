@@ -8,7 +8,7 @@ import { IoLogoInstagram } from "react-icons/io5";
 
 export default function contact() {
   return (
-    <section className="relative py-12 sm:py-24 lg:py-10 px-3 md:px-10 lg:px-24 bg-primary/30 h-[68rem] sm:h-[58rem] lg:h-[40rem]">
+    <section className="relative py-12 sm:py-24 lg:py-10 px-3 md:px-10 lg:px-24 bg-gradient-to-b from-primary/30 to-primary/60 h-[68rem] sm:h-[58rem] lg:h-[40rem]">
       <div className="bg-primary flex-col lg:hidden top-0 text-white w-[70%] h-[21rem] mt-10 absolute z-10 shadow-md p-8 mx-auto left-0 right-0">
         <h2 className="text-2xl text-center font-semibold">Kontakt Info</h2>
         <div className="mt-6 space-y-4">

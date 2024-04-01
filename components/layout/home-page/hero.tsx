@@ -1,12 +1,11 @@
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="py-12 sm:py-24 lg:py-10 px-3 md:px-10 lg:px-24">
-      <div className="flex items-center justify-center">
-        <div className="space-y-6 lg:pr-24 justify-center">
+    <section className="py-24 lg:py-12 px-3 md:px-10 lg:px-24 hero-image text-white mt-[-96px]">
+      <div className="flex items-center justify-center h-[35rem]">
+        <div className="space-y-6 lg:pr-24 justify-center backdrop-blur-[3px] p-16 rounded-xl">
           <h1 className="2xl:text-6xl text-4xl sm:text-5xl font-semibold sm:min-w-[400px] max-w-[700px]">
             Visoko Kvalitetni Montažni Objekti i Garažna Vrata
           </h1>
@@ -23,7 +22,7 @@ export default function Hero() {
             <Link href="/products">
               <Button
                 size="lg"
-                className="border-2 border-[color:var(--analogous)]"
+                className="border-2 border-[color:var(--analogous)] text-newBlack"
                 variant="outline"
               >
                 Istražite
@@ -31,13 +30,6 @@ export default function Hero() {
             </Link>
           </div>
         </div>
-        <Image
-          src="/images/garage1.jpeg"
-          alt="Carousel image"
-          width={10}
-          height={10}
-          className="hidden lg:block w-[450px] h-[600px] 2xl:w-[700px] 2xl:h-[800px]"
-        />
       </div>
     </section>
   );

@@ -7,6 +7,15 @@ input:focus {
   outline: none;
 }
 
+.hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/hero-garage.jpeg");
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

@@ -35,10 +35,10 @@ export default function Navbar() {
   }, [scrolling]);
 
   return (
-    <nav className="max-w-full fixed top-0 left-0 right-0 z-50">
+    <nav className="max-w-full fixed top-0 left-0 right-0 z-50 bg-black/30 text-newWhite">
       <div
-        className={`px-3 md:px-10 lg:px-24 py-6 flex justify-between items-center transition-all duration-300 border-b-2 border-black ${
-          scrolling ? "bg-[color:var(--light)] border-none" : "bg-transparent"
+        className={`px-3 md:px-10 lg:px-24 py-6 flex justify-between items-center transition-all duration-300 ${
+          scrolling ? "bg-[color:var(--light)]" : "bg-transparent"
         }`}
       >
         <div className="flex items-center">
@@ -67,14 +67,16 @@ export default function Navbar() {
         </div>
         <div className="flex items-center gap-x-4">
           <div className="hidden items-center gap-x-4 md:flex">
-            <ModeToggle />
+            <div className="text-newBlack">
+              <ModeToggle />
+            </div>
             <Link href="/contact">
               <Button>Contact</Button>
             </Link>
           </div>
           <RxHamburgerMenu
             size={30}
-            className="block lg:hidden cursor-pointer"
+            className="block lg:hidden cursor-pointer text-white"
             onClick={() => setOpen(!open)}
           />
         </div>

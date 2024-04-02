@@ -46,7 +46,7 @@ export default function Navbar() {
             <Link href="/">Naslovna</Link>
           </p>
           <p>
-            <Link href="#">O nama</Link>
+            <Link href="/about">O nama</Link>
           </p>
           <p>
             <Link href="#">Recenzije</Link>

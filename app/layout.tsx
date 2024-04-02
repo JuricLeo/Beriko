@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Epilogue } from "next/font/google";
+import { Manrope } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/layout/main-layout/footer";
 import Navbar from "@/components/layout/main-layout/navbar";
 import { Toaster } from "sonner";
 import { ThemeProvider } from "@/components/theme-provider";
 
-const font = Epilogue({ subsets: ["latin"] });
+const font = Manrope({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -28,7 +28,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          {children}
+          <main className="mt-24">{children}</main>
           <Footer />
           <Toaster />
         </ThemeProvider>

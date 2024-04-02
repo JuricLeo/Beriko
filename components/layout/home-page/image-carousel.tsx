@@ -12,7 +12,7 @@ import Autoplay from "embla-carousel-autoplay";
 import { useRef } from "react";
 import Image from "next/image";
 
-export default function CustomerStatements() {
+export default function ImageSlider() {
   const carouselRef = useRef(null);
   const plugin = useRef(Autoplay({ delay: 5000, stopOnInteraction: true }));
 
@@ -31,23 +31,23 @@ export default function CustomerStatements() {
   ];
 
   return (
-    <section className="flex justify-center">
+    <section className="flex justify-center px-3 py-12 bg-primary/30">
       <Carousel
         ref={carouselRef}
         plugins={[plugin.current]}
-        className="w-9/12 md:w-10/12 lg:w-9/12"
+        className="w-4/5"
         onMouseEnter={() => plugin.current.stop()}
         onMouseLeave={restartAutoplay}
         opts={{
-          align: "center",
+          align: "start",
           loop: true,
         }}
       >
         <CarouselContent>
           {images.map((image, index) => (
-            <CarouselItem key={index} className="basis-4/5">
+            <CarouselItem key={index} className="pl-1 md:basis-3/4">
               <div className="p-1">
-                <Card>
+                <Card className="border-none">
                   <CardContent className="flex aspect-video items-center justify-center p-0">
                     <div className="relative w-full h-full">
                       <Image
@@ -55,6 +55,7 @@ export default function CustomerStatements() {
                         alt="Carousel image"
                         fill
                         style={{ objectFit: "cover" }}
+                        className="rounded-md"
                       />
                     </div>
                   </CardContent>
@@ -63,6 +64,8 @@ export default function CustomerStatements() {
             </CarouselItem>
           ))}
         </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
       </Carousel>
     </section>
   );

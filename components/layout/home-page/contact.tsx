@@ -3,8 +3,9 @@
 import { Button } from "@/components/ui/button";
 import { Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
-import { FaFacebookF, FaXTwitter } from "react-icons/fa6";
+import { FaXTwitter } from "react-icons/fa6";
 import { IoLogoInstagram } from "react-icons/io5";
+import { FiFacebook } from "react-icons/fi";
 
 export default function contact() {
   return (
@@ -30,7 +31,7 @@ export default function contact() {
             href="#"
             className="rounded-md p-4 bg-newWhite text-newBlack hover:opacity-75 duration-300"
           >
-            <FaFacebookF size={10} />
+            <FiFacebook size={10} />
           </Link>
           <Link
             href="#"
@@ -68,7 +69,7 @@ export default function contact() {
             href="#"
             className="rounded-md p-4 bg-newWhite text-newBlack hover:opacity-75 duration-300"
           >
-            <FaFacebookF size={16} />
+            <FiFacebook size={16} />
           </Link>
           <Link
             href="#"

@@ -45,11 +45,11 @@ export default function Navbar() {
           <Image alt="Beriko" src="/logo.png" width={200} height={200} />
           <div className="gap-x-10 mr-10 hidden lg:flex">
             <Link href="/">Naslovna</Link>
-          </p>
-          <p>
-            <Link href="/about">O nama</Link>
-          </p>
-          <p>
+
+            <p>
+              <Link href="/about">O nama</Link>
+            </p>
+
             <Link href="#">Recenzije</Link>
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center">

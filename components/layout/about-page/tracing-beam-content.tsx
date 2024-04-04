@@ -1,31 +1,40 @@
-"use client";
 import React from "react";
 import Image from "next/image";
+import { twMerge } from "tailwind-merge";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 
-export function TracingBeamDemo() {
+export function Timeline() {
   return (
-    <TracingBeam className="mt-24 mx-auto">
-      <div className="w-full antialiased pt-4 relative">
+    <TracingBeam className="px-10 md:px-0  mt-24 ">
+      <div className=" lg:max-w-10xl mx-auto antialiased pt-4 relative">
         {dummyContent.map((item, index) => (
-          <div key={`content-${index}`} className="mb-10">
-            <h2 className="bg-black text-white rounded-full text-sm w-fit px-4 py-1 mb-4">
-              {item.badge}
-            </h2>
+          <div
+            key={`content-${index}`}
+            className={`mb-10 md:flex p-0 md:items-center md:justify-center  ${
+              index % 2 === 0 ? "md:flex-row " : "md:flex-row-reverse"
+            }`}
+          >
+            <div className="md:w-6/12 px-4">
+              {item.badge && item.badge.trim() !== "" && (
+                <h2 className="bg-black text-white rounded-full text-sm w-fit px-4 py-1 mb-4">
+                  {item.badge}
+                </h2>
+              )}
 
-            <p className="text-xl mb-4">{item.title}</p>
+              <p className="text-xl mb-4 font-bold">{item.title}</p>
+              <p> {item.description}</p>
+            </div>
 
-            <div className="text-sm  prose prose-sm dark:prose-invert">
+            <div className="text-sm prose prose-sm dark:prose-invert md:w-6/12 flex items-center justify-center">
               {item?.image && (
                 <Image
                   src={item.image}
                   alt="blog thumbnail"
-                  height="1000"
-                  width="1000"
-                  className="rounded-lg mb-10 object-cover"
+                  height="700"
+                  width="500"
+                  className="rounded-r-md"
                 />
               )}
-              {item.description}
             </div>
           </div>
         ))}
@@ -36,77 +45,74 @@ export function TracingBeamDemo() {
 
 const dummyContent = [
   {
-    title: "Lorem Ipsum Dolor Sit Amet",
+    title: "OSNOVAN BERIKO",
     description: (
-      <>
-        <p>
-          Sit duis est minim proident non nisi velit non consectetur. Esse
-          adipisicing laboris consectetur enim ipsum reprehenderit eu deserunt
-          Lorem ut aliqua anim do. Duis cupidatat qui irure cupidatat incididunt
-          incididunt enim magna id est qui sunt fugiat. Laboris do duis pariatur
-          fugiat Lorem aute sit ullamco. Qui deserunt non reprehenderit dolore
-          nisi velit exercitation Lorem qui do enim culpa. Aliqua eiusmod in
-          occaecat reprehenderit laborum nostrud fugiat voluptate do Lorem culpa
-          officia sint labore. Tempor consectetur excepteur ut fugiat veniam
-          commodo et labore dolore commodo pariatur.
+      <div className="space-y-3">
+        <p className="leading-7">
+          Beriko nije samo tvrtka - mi smo zajednica entuzijasta, stručnjaka i
+          vizionara koji dijele istu strast prema tehnologiji. Naše vrijednosti,
+          poput inovacije, integriteta i održivosti, utkane su u sve što radimo.
+          S ponosom gradimo mostove između ideja i realizacije, povezujući ljude
+          s tehnologijom na način koji nadilazi samo poslovanje.
         </p>
-        <p>
-          Dolor minim irure ut Lorem proident. Ipsum do pariatur est ad ad
-          veniam in commodo id reprehenderit adipisicing. Proident duis
-          exercitation ad quis ex cupidatat cupidatat occaecat adipisicing.
-        </p>
-        <p>
-          Tempor quis dolor veniam quis dolor. Sit reprehenderit eiusmod
-          reprehenderit deserunt amet laborum consequat adipisicing officia qui
-          irure id sint adipisicing. Adipisicing fugiat aliqua nulla nostrud.
-          Amet culpa officia aliquip deserunt veniam deserunt officia
-          adipisicing aliquip proident officia sunt.
-        </p>
-      </>
+      </div>
     ),
-    badge: "20. Siječnja 2013.",
+    badge: "28.10.2003.",
     image:
       "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=3540&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    title: "Lorem Ipsum Dolor Sit Amet",
+    title: "SAVRŠEN IZBOR",
     description: (
-      <>
+      <div className="space-y-3">
         <p>
-          Ex irure dolore veniam ex velit non aute nisi labore ipsum occaecat
-          deserunt cupidatat aute. Enim cillum dolor et nulla sunt exercitation
-          non voluptate qui aliquip esse tempor. Ullamco ut sunt consectetur
-          sint qui qui do do qui do. Labore laborum culpa magna reprehenderit ea
-          velit id esse adipisicing deserunt amet dolore. Ipsum occaecat veniam
-          commodo proident aliqua id ad deserunt dolor aliquip duis veniam sunt.
+          U proteklih deset godina prometnuli smo se u svojevrsnog lidera na
+          tržištu montažnih objekata u Hrvatskoj.
         </p>
         <p>
-          In dolore veniam excepteur eu est et sunt velit. Ipsum sint esse
-          veniam fugiat esse qui sint ad sunt reprehenderit do qui proident
-          reprehenderit. Laborum exercitation aliqua reprehenderit ea sint
-          cillum ut mollit.
+          Omogućujemo Vam da na najjednostavniji i najpovoljniji način dođete do
+          svoje montažne garaže, garažnih vrata, te svega ostalog što je
+          potrebno za vaš moderan montažni objekt.
         </p>
-      </>
+      </div>
     ),
-    badge: "20. Siječnja 2013.",
+    badge: "",
     image:
       "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&q=80&w=3540&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    title: "Lorem Ipsum Dolor Sit Amet",
+    title: "NAŠ CILJ",
+
     description: (
       <>
-        <p>
-          Ex irure dolore veniam ex velit non aute nisi labore ipsum occaecat
-          deserunt cupidatat aute. Enim cillum dolor et nulla sunt exercitation
-          non voluptate qui aliquip esse tempor. Ullamco ut sunt consectetur
-          sint qui qui do do qui do. Labore laborum culpa magna reprehenderit ea
-          velit id esse adipisicing deserunt amet dolore. Ipsum occaecat veniam
-          commodo proident aliqua id ad deserunt dolor aliquip duis veniam sunt.
+        <p className="leading-7">
+          U središtu našeg cilja nalazi se kontinuirana predanost izvrsnosti i
+          kvaliteti. Naš tim stručnjaka, s bogatim iskustvom u različitim
+          područjima tehnologije, posvećen je pružanju rješenja koja nadmašuju
+          očekivanja naših klijenata. Svaki projekt koji preuzimamo nije samo
+          izazov, već prilika za stvaranje nečeg izvanrednog.
         </p>
       </>
     ),
-    badge: "Launch Week",
+    badge: "",
+    image:
+      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80&w=3506&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    title: "VIZIJA",
+
+    description: (
+      <div className="space-y-3">
+        <p className="leading-7">
+          Kroz svaki korak našeg puta, ostajemo predani ideji da tehnologija
+          treba biti pristupačna svima. Za bolju budućnost - jedan u kojem su
+          inovacije dostupne svima, potičući rast i napredak u zajednici. Mi
+          nismo samo tvrtka. Mi smo pokretač promjena.
+        </p>
+        <p className="leading-7">Dobrodošli u naš svijet.</p>
+      </div>
+    ),
+    badge: "",
     image:
       "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80&w=3506&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },

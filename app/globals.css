@@ -7,8 +7,14 @@ input:focus {
   outline: none;
 }
 
-.cta-section-bg {
+.reviews-cta-section-bg {
   background-image: url("/blurry-gradient-haikei.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.reviews-hero-section-bg {
+  background-image: url("/circle-scatter-haikei.svg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -30,7 +36,7 @@ input:focus {
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 221.2 83.2% 53.3%;
+    --primary: 221.2 83.2% 53.3%; /* #2563EB */
     --primary-foreground: 210 40% 98%;
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -44,8 +50,8 @@ input:focus {
     --input: 214.3 31.8% 91.4%;
     --ring: 221.2 83.2% 53.3%;
     --radius: 0.5rem;
-    --analogous: hsl(41.2, 83.2%, 53.3%);
-    --light: hsl(221.2, 82.7%, 78.2%);
+    --analogous: hsl(41.2, 83.2%, 53.3%); /* #EBAD25 */
+    --light: hsl(221.2, 82.7%, 78.2%); /* #99B6F5 */
   }
 
   .dark {

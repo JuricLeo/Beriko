@@ -38,40 +38,36 @@ export default function Navbar() {
     <nav className="max-w-full fixed top-0 left-0 right-0 z-50 bg-black/30 text-newWhite">
       <div
         className={`px-3 md:px-10 lg:px-24 py-6 flex justify-between items-center transition-all duration-300 ${
-          scrolling ? "bg-[color:var(--light)]" : "bg-transparent"
+          scrolling ? "bg-[color:var(--light)] text-newBlack" : "bg-transparent"
         }`}
       >
         <div className="flex items-center">
           <Image alt="Beriko" src="/logo.png" width={200} height={200} />
           <div className="gap-x-10 mr-10 hidden lg:flex">
             <Link href="/">Naslovna</Link>
-
-            <p>
-              <Link href="/about">O nama</Link>
-            </p>
-
-            <Link href="#">Recenzije</Link>
+            <Link href="/about">O nama</Link>
+            <Link href="/reviews">Recenzije</Link>
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center">
                 Ostalo <ChevronDown className="w-4 h-4 ml-2" />
               </DropdownMenuTrigger>
               <DropdownMenuContent>
-                <DropdownMenuItem>
-                  <Link href="#">Galerija</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Link href="#">Blog</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Link href="#">Katalog proizvoda</Link>
-                </DropdownMenuItem>
+                <Link href="/gallery">
+                  <DropdownMenuItem>Galerija</DropdownMenuItem>
+                </Link>
+                <Link href="/blog">
+                  <DropdownMenuItem>Blog</DropdownMenuItem>
+                </Link>
+                <Link href="/products">
+                  <DropdownMenuItem>Katalog proizvoda</DropdownMenuItem>
+                </Link>
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
         </div>
         <div className="flex items-center gap-x-4">
           <div className="hidden items-center gap-x-4 md:flex">
-            <div className="text-newBlack">
+            <div className="text-newBlack dark:text-newWhite">
               <ModeToggle />
             </div>
             <Link href="/contact">

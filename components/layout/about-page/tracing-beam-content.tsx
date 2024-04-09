@@ -5,13 +5,13 @@ import { TracingBeam } from "@/components/ui/tracing-beam";
 
 export function Timeline() {
   return (
-    <TracingBeam className="px-10 md:px-0  mt-24 ">
-      <div className=" lg:max-w-10xl mx-auto antialiased pt-4 relative">
+    <TracingBeam className="px-10 md:px-0 mt-24">
+      <div className="lg:max-w-10xl mx-auto antialiased pt-4 relative">
         {dummyContent.map((item, index) => (
           <div
             key={`content-${index}`}
-            className={`mb-10 md:flex p-0 md:items-center md:justify-center  ${
-              index % 2 === 0 ? "md:flex-row " : "md:flex-row-reverse"
+            className={`mb-10 md:flex p-0 md:items-center justify-center ${
+              index % 2 === 0 ? "md:flex-row " : "md:flex-row-reverse "
             }`}
           >
             <div className="md:w-6/12 px-4">
@@ -21,19 +21,28 @@ export function Timeline() {
                 </h2>
               )}
 
-              <p className="text-xl mb-4 font-bold">{item.title}</p>
-              <p> {item.description}</p>
+              <p className="text-4xl  mb-4 fon font-bold">{item.title}</p>
+              <div className="space-y-3 mb-5 w-10/12 ">{item.description}</div>
             </div>
 
             <div className="text-sm prose prose-sm dark:prose-invert md:w-6/12 flex items-center justify-center">
               {item?.image && (
-                <Image
-                  src={item.image}
-                  alt="blog thumbnail"
-                  height="700"
-                  width="500"
-                  className="rounded-r-md"
-                />
+                <div
+                  style={{
+                    position: "relative",
+                    width: "100%",
+                    height: 0,
+                    paddingBottom: "100%",
+                  }}
+                >
+                  <Image
+                    src={item.image}
+                    alt="blog thumbnail"
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-r-md"
+                  />
+                </div>
               )}
             </div>
           </div>
@@ -84,15 +93,13 @@ const dummyContent = [
     title: "NAŠ CILJ",
 
     description: (
-      <>
-        <p className="leading-7">
-          U središtu našeg cilja nalazi se kontinuirana predanost izvrsnosti i
-          kvaliteti. Naš tim stručnjaka, s bogatim iskustvom u različitim
-          područjima tehnologije, posvećen je pružanju rješenja koja nadmašuju
-          očekivanja naših klijenata. Svaki projekt koji preuzimamo nije samo
-          izazov, već prilika za stvaranje nečeg izvanrednog.
-        </p>
-      </>
+      <p className="leading-7">
+        U središtu našeg cilja nalazi se kontinuirana predanost izvrsnosti i
+        kvaliteti. Naš tim stručnjaka, s bogatim iskustvom u različitim
+        područjima tehnologije, posvećen je pružanju rješenja koja nadmašuju
+        očekivanja naših klijenata. Svaki projekt koji preuzimamo nije samo
+        izazov, već prilika za stvaranje nečeg izvanrednog.
+      </p>
     ),
     badge: "",
     image:

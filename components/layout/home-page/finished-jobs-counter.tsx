@@ -39,21 +39,21 @@ export default function FinishedJobCounter() {
             <p className="text-3xl font-bold text-white/80">
               {isVisible && (
                 <div>
-                  <CountUp end={100} duration={3} />+
+                  <CountUp end={19} duration={3} />
                 </div>
               )}
             </p>
-            <p className="text-slate-400">Projects Completed</p>
+            <p className="text-slate-400">Godina Iskustva</p>
           </div>
           <div className="text-center space-y-2">
             <p className="text-3xl font-bold text-white/80">
               {isVisible && (
                 <div>
-                  <CountUp end={24} duration={4} />
+                  <CountUp end={8} duration={4} />+
                 </div>
               )}
             </p>
-            <p className="text-slate-400">Win Awards</p>
+            <p className="text-slate-400">Izvrsnih Majstora</p>
           </div>
         </div>
         <div className="flex flex-col md:flex-row space-y-12 md:space-y-0 md:space-x-24">
@@ -61,21 +61,21 @@ export default function FinishedJobCounter() {
             <p className="text-3xl font-bold text-white/80">
               {isVisible && (
                 <div>
-                  <CountUp end={20} duration={3} />k
+                  <CountUp end={4} duration={3} />
                 </div>
               )}
             </p>
-            <p className="text-slate-400">Satisfied Clients</p>
+            <p className="text-slate-400">Države</p>
           </div>
           <div className="text-center space-y-2">
             <p className="text-3xl font-bold text-white/80">
               {isVisible && (
                 <div>
-                  <CountUp end={5} duration={4} />+
+                  <CountUp end={250} duration={4} />+
                 </div>
               )}
             </p>
-            <p className="text-slate-400">Employees</p>
+            <p className="text-slate-400">Zadovoljenih Kupaca</p>
           </div>
         </div>
       </div>

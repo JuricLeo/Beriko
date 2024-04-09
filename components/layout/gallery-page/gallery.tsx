@@ -1,0 +1,102 @@
+"use client";
+
+import LightGallery from "lightgallery/react";
+import "lightgallery/css/lightgallery.css";
+import "lightgallery/css/lg-zoom.css";
+import "lightgallery/css/lg-thumbnail.css";
+import lgThumbnail from "lightgallery/plugins/thumbnail";
+import Image from "next/image";
+import Link from "next/link";
+
+const images = [
+  {
+    src: "/images/home-carousel/image1.jpg",
+    alt: "logo",
+  },
+  {
+    src: "/images/home-carousel/image2.jpeg",
+    alt: "logo",
+  },
+  {
+    src: "/images/home-carousel/image3.jpeg",
+    alt: "logo",
+  },
+  {
+    src: "/images/home-carousel/image4.jpeg",
+    alt: "logo",
+  },
+  {
+    src: "/images/home-carousel/image5.jpeg",
+    alt: "logo",
+  },
+  {
+    src: "/images/home-carousel/image1.jpg",
+    alt: "logo",
+  },
+  {
+    src: "/images/home-carousel/image2.jpeg",
+    alt: "logo",
+  },
+  {
+    src: "/images/home-carousel/image3.jpeg",
+    alt: "logo",
+  },
+  {
+    src: "/images/home-carousel/image4.jpeg",
+    alt: "logo",
+  },
+  {
+    src: "/images/home-carousel/image5.jpeg",
+    alt: "logo",
+  },
+  {
+    src: "/images/home-carousel/image1.jpg",
+    alt: "logo",
+  },
+  {
+    src: "/images/home-carousel/image2.jpeg",
+    alt: "logo",
+  },
+  {
+    src: "/images/home-carousel/image3.jpeg",
+    alt: "logo",
+  },
+  {
+    src: "/images/home-carousel/image4.jpeg",
+    alt: "logo",
+  },
+  {
+    src: "/images/home-carousel/image5.jpeg",
+    alt: "logo",
+  },
+];
+
+export default function Gallery() {
+  return (
+    <section className="py-12 sm:py-24 lg:py-10 px-3 md:px-10 lg:px-24">
+      <div>
+        <h1 className="text-center text-4xl font-semibold">Galerija</h1>
+        <p className="text-center font-lg text-slate-400 mt-4 mb-10">
+          Pogledajte naš rad kojim se ponosimo!
+        </p>
+      </div>
+      <LightGallery
+        speed={500}
+        plugins={[lgThumbnail]}
+        elementClassNames="grid sm:grid-cols-2 md:grid-cols-3 sm:gap-4"
+      >
+        {images.map(({ src, alt }) => (
+          <Link href={src} key={src}>
+            <Image
+              alt={alt}
+              src={src}
+              width={100}
+              height={100}
+              className="w-full block"
+            />
+          </Link>
+        ))}
+      </LightGallery>
+    </section>
+  );
+}

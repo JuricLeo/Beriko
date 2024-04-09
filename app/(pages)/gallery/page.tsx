@@ -1,6 +1,10 @@
+import Gallery from "@/components/layout/gallery-page/gallery";
+
 const GalleryPage = () => {
   return ( 
-    <main></main>
+    <main>
+      <Gallery />
+    </main>
    );
 }
  

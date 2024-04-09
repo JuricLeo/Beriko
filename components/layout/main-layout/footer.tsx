@@ -15,7 +15,7 @@ export default function Footer() {
               height={200}
               alt="Logo"
               className="bg-white"
-            ></Image>
+            />
             <h2>Izgradite svoju savršenu garažu uz Beriko.</h2>
             <p className="md:max-w-[500px]">
               S preciznom montažom i besprijekornim detaljima, unaprijedite svoj

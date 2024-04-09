@@ -7,7 +7,7 @@ export default function CtaSection() {
       <div className="flex flex-col lg:flex-row justify-center items-center lg:px-36 py-12">
         <p className="text-newBlack text-2xl font-semibold">Sviđa Vam se što čujete? <br /> Kontaktirajte nas odmah!</p>
         <Link href="/contact" className="mt-6 lg:ml-12 lg:mt-0">
-          <Button size="lg">Kontakt</Button>
+          <Button size="lg" className="bg-primary/75 hover:bg-primary/60 text-white">Kontakt</Button>
         </Link>
       </div>
     </section>

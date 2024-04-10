@@ -10,7 +10,6 @@ export default function Contact() {
       <ContactHeroSection />
       <ContactForm />
       <ContactInfo />
-
       <Map />
       <FAQSection />
     </main>

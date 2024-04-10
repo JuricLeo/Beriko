@@ -8,13 +8,19 @@ input:focus {
 }
 
 .reviews-cta-section-bg {
-  background-image: url("/blurry-gradient-haikei1.svg");
+  background-image: url("/haikei/blurry-gradient-haikei1.svg");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .reviews-hero-section-bg {
-  background-image: url("/circle-scatter-haikei.svg");
+  background-image: url("/haikei/circle-scatter-haikei.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.first-product-bg {
+  background-image: url("/haikei/blob-scene-haikei.svg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -34,6 +40,16 @@ input:focus {
 .hero-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("/images/hero-garage.jpeg");
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.products-hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/images/products-hero.jpg");
   height: 50%;
   background-position: center;
   background-repeat: no-repeat;

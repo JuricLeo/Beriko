@@ -2,7 +2,7 @@ import Contact from "@/components/layout/home-page/contact";
 import ImageSlider from "@/components/layout/home-page/image-carousel";
 import FinishedJobCounter from "@/components/layout/home-page/finished-jobs-counter";
 import Testimonials from "@/components/layout/home-page/testimonials";
-import { Timeline } from "@/components/layout/about-page/tracing-beam-content";
+
 import Hero from "@/components/layout/home-page/hero";
 import FeatureStrenght from "@/components/layout/home-page/feature-strenght";
 import QualitySection from "@/components/layout/home-page/quality-section";

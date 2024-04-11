@@ -2,11 +2,11 @@ import Image from "next/image";
 
 const images = [
   {
-    src: "/images/hero-garage.jpeg",
+    src: "/images/montazni-objekti/products-hero.jpg",
     alt: "",
   },
   {
-    src: "/images/products-hero.jpg",
+    src: "/images/montazni-objekti/hero-garage.jpeg",
     alt: "",
   },
 ];
@@ -50,7 +50,7 @@ export default function FirstProducts() {
           </p>
         </div>
       </div>
-      <div className="flex flex-col md:flex-row justify-center mt-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-8">
         {images.map(({ src, alt }) => (
           <div className="w-full flex justify-center mt-2 md:mr-2" key={src}>
             <Image

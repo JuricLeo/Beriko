@@ -5,6 +5,7 @@ import Footer from "@/components/layout/main-layout/footer";
 import Navbar from "@/components/layout/main-layout/navbar";
 import { Toaster } from "sonner";
 import { ThemeProvider } from "@/components/theme-provider";
+import CookieConsent from "@/components/layout/main-layout/cookie-consent";
 
 const font = Manrope({ subsets: ["latin"] });
 
@@ -30,6 +31,7 @@ export default function RootLayout({
           <Navbar />
           <main className="mt-[92px]">{children}</main>
           <Footer />
+          <CookieConsent />
           <Toaster />
         </ThemeProvider>
       </body>

@@ -25,6 +25,12 @@ input:focus {
   background-size: cover;
 }
 
+.second-product-bg {
+  background-image: url("/haikei/blob-scene-haikei2.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .contact-hero-section-bg {
   background-image: url("/contact-header-img.jpg");
   background-repeat: no-repeat;

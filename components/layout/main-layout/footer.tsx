@@ -94,6 +94,12 @@ export default function Footer() {
               >
                 FAQs
               </Link>
+              <Link
+                href="/privacy-policy"
+                className="ml-4 md:ml-0 hover:opacity-75 duration-300"
+              >
+                Politika Privatnosti
+              </Link>
             </div>
           </div>
         </div>

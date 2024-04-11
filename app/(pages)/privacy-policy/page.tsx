@@ -2,9 +2,10 @@ const PrivacyPolicy = () => {
   return (
     <main>
       <section className="py-12 sm:py-24 lg:py-10 px-3 md:px-10 lg:px-24">
+        <h1 className="text-4xl font-semibold text-center mt-8 mb-12">Politika Privatnosti</h1>
         <div className="flex flex-col m-auto max-w-[600px]">
           <div className="mb-4">
-            <h1 className="text-primary font-semibold">Uvod</h1>
+            <h2 className="text-primary font-semibold">Uvod</h2>
             <p className="text-sm mt-2">
               Dobrodošli na Beriko.com! Vaša privatnost nam je važna. Ova
               Politika privatnosti objašnjava kako prikupljamo, koristimo,
@@ -13,9 +14,9 @@ const PrivacyPolicy = () => {
             </p>
           </div>
           <div className="mb-4">
-            <h1 className="text-primary font-semibold">
+            <h2 className="text-primary font-semibold">
               Prikupljanje Informacija
-            </h1>
+            </h2>
             <p className="text-sm mt-2">
               Kada posjetite Beriko.com, možemo prikupljati određene informacije
               o vama, kao što su vaše ime, e-mail adresa, IP adresa, i druge
@@ -23,9 +24,9 @@ const PrivacyPolicy = () => {
             </p>
           </div>
           <div className="mb-4">
-            <h1 className="text-primary font-semibold">
+            <h2 className="text-primary font-semibold">
               Korištenje Informacija
-            </h1>
+            </h2>
             <p className="text-sm mt-2">
               Koristimo prikupljene informacije kako bismo vam pružili i
               poboljšali naše usluge, razumjeli kako koristite našu web
@@ -33,9 +34,9 @@ const PrivacyPolicy = () => {
             </p>
           </div>
           <div className="mb-4">
-            <h1 className="text-primary font-semibold">
+            <h2 className="text-primary font-semibold">
               Dijelenje Informacija
-            </h1>
+            </h2>
             <p className="text-sm mt-2">
               Vaše informacije nećemo dijeliti s trećim stranama, osim u
               slučajevima kada je to zakonski obavezno ili je potrebno za
@@ -43,7 +44,7 @@ const PrivacyPolicy = () => {
             </p>
           </div>
           <div className="mb-4">
-            <h1 className="text-primary font-semibold">Sigurnost</h1>
+            <h2 className="text-primary font-semibold">Sigurnost</h2>
             <p className="text-sm mt-2">
               Predani smo zaštiti vaših informacija. Koristimo razne sigurnosne
               mjere kako bismo zaštitili vaše informacije od neautoriziranog
@@ -51,7 +52,7 @@ const PrivacyPolicy = () => {
             </p>
           </div>
           <div className="mb-4">
-            <h1 className="text-primary font-semibold">Vaša Prava</h1>
+            <h2 className="text-primary font-semibold">Vaša Prava</h2>
             <p className="text-sm mt-2">
               Imate pravo zatražiti pristup, ispravak ili brisanje vaših osobnih
               podataka koje imamo. Ako želite iskoristiti svoja prava, molimo
@@ -59,18 +60,18 @@ const PrivacyPolicy = () => {
             </p>
           </div>
           <div className="mb-4">
-            <h1 className="text-primary font-semibold">
+            <h2 className="text-primary font-semibold">
               Promjene ove Politike Privatnosti
-            </h1>
+            </h2>
             <p className="text-sm mt-2">
               Možemo povremeno ažurirati ovu Politiku privatnosti. Ako napravimo
               značajne promjene, obavijestit ćemo vas putem naše web stranice.
             </p>
           </div>
           <div className="mb-4">
-            <h1 className="text-primary font-semibold">
+            <h2 className="text-primary font-semibold">
               Kontakt
-            </h1>
+            </h2>
             <p className="text-sm mt-2">
               Ako imate bilo kakvih pitanja o ovoj Politici privatnosti, molimo
               vas da nas kontaktirate putem <a className="text-primary" href="mailto:beriko@beriko.com">beriko@beriko.com</a>.

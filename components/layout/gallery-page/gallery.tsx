@@ -10,63 +10,63 @@ import Link from "next/link";
 
 const images = [
   {
-    src: "/images/home-carousel/image1.jpg",
+    src: "/images/gallery/image1.jpg",
     alt: "logo",
   },
   {
-    src: "/images/home-carousel/image2.jpeg",
+    src: "/images/gallery/image2.jpeg",
     alt: "logo",
   },
   {
-    src: "/images/home-carousel/image3.jpeg",
+    src: "/images/gallery/image3.jpeg",
     alt: "logo",
   },
   {
-    src: "/images/home-carousel/image4.jpeg",
+    src: "/images/gallery/image4.jpeg",
     alt: "logo",
   },
   {
-    src: "/images/home-carousel/image5.jpeg",
+    src: "/images/gallery/image5.jpeg",
     alt: "logo",
   },
   {
-    src: "/images/home-carousel/image1.jpg",
+    src: "/images/gallery/image1.jpg",
     alt: "logo",
   },
   {
-    src: "/images/home-carousel/image2.jpeg",
+    src: "/images/gallery/image2.jpeg",
     alt: "logo",
   },
   {
-    src: "/images/home-carousel/image3.jpeg",
+    src: "/images/gallery/image3.jpeg",
     alt: "logo",
   },
   {
-    src: "/images/home-carousel/image4.jpeg",
+    src: "/images/gallery/image4.jpeg",
     alt: "logo",
   },
   {
-    src: "/images/home-carousel/image5.jpeg",
+    src: "/images/gallery/image5.jpeg",
     alt: "logo",
   },
   {
-    src: "/images/home-carousel/image1.jpg",
+    src: "/images/gallery/image1.jpg",
     alt: "logo",
   },
   {
-    src: "/images/home-carousel/image2.jpeg",
+    src: "/images/gallery/image2.jpeg",
     alt: "logo",
   },
   {
-    src: "/images/home-carousel/image3.jpeg",
+    src: "/images/gallery/image3.jpeg",
     alt: "logo",
   },
   {
-    src: "/images/home-carousel/image4.jpeg",
+    src: "/images/gallery/image4.jpeg",
     alt: "logo",
   },
   {
-    src: "/images/home-carousel/image5.jpeg",
+    src: "/images/gallery/image5.jpeg",
     alt: "logo",
   },
 ];

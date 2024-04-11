@@ -21,6 +21,7 @@ export default function Map() {
         zoomControl={false} 
         scrollWheelZoom={false} 
         doubleClickZoom={false}
+        draggable={false}
         className="z-10 w-full h-[500px]"
       >
         <TileLayer

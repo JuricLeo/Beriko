@@ -14,11 +14,22 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { ChevronDown } from "lucide-react";
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
+  const [isSheetOpen, setIsSheetOpen] = useState(false);
   const [scrolling, setScrolling] = useState(false);
+
+  const toggleSheet = () => setIsSheetOpen(prev => !prev);
+  const closeSheet = () => setIsSheetOpen(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -74,53 +85,37 @@ export default function Navbar() {
               <Button>Contact</Button>
             </Link>
           </div>
-          <RxHamburgerMenu
-            size={30}
-            className="block lg:hidden cursor-pointer text-white"
-            onClick={() => setOpen(!open)}
-          />
+          <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
+            <SheetTrigger onClick={toggleSheet}>
+              <RxHamburgerMenu
+                size={30}
+                className="block lg:hidden cursor-pointer"
+              />
+            </SheetTrigger>
+            <SheetContent className="bg-[#37507a] text-slate-200">
+              <SheetHeader>
+                <SheetTitle className="text-newWhite/60">Navigacija</SheetTitle>
+                <SheetDescription>
+                  <div className="space-y-10 flex flex-col mt-[10%] p-8 text-lg text-newWhite">
+                    <Link href="/" onClick={closeSheet}>Naslovna</Link>
+                    <Link href="/about" onClick={closeSheet}>O nama</Link>
+                    <Link href="/reviews" onClick={closeSheet}>Recenzije</Link>
+                    <Link href="/gallery" onClick={closeSheet}>Galerija</Link>
+                    <Link href="/blog" onClick={closeSheet}>Blog</Link>
+                    <Link href="/products" onClick={closeSheet}>Katalog proizvoda</Link>
+                    <div className="flex items-center justify-center md:justify-left gap-x-4 md:hidden pt-12 text-black dark:text-white">
+                      <Button variant="secondary">
+                        <Link href="/contact" onClick={closeSheet}>Contact</Link>
+                      </Button>
+                      <ModeToggle />
+                    </div>
+                  </div>
+                </SheetDescription>
+              </SheetHeader>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
-      {open && (
-        <div className="fixed inset-0 bg-opacity-75 bg-black w-full h-full z-10">
-          <div className="flex w-[300px] bg-[#37507a] text-white z-20 uppercase flex-col h-full absolute right-0 top-0 transition-transform duration-300">
-            <div className="flex items-center justify-between p-8">
-              <p className="text-2xl">Navigacija</p>
-              <IoMdClose
-                size={26}
-                onClick={() => setOpen(false)}
-                className="cursor-pointer"
-              />
-            </div>
-            <div className="space-y-10 flex flex-col mt-[10%] p-8 text-lg">
-              <p>
-                <Link href="#">Naslovna</Link>
-              </p>
-              <p className="whitespace-nowrap">
-                <Link href="#">O nama</Link>
-              </p>
-              <p>
-                <Link href="#">Recenzije</Link>
-              </p>
-              <p>
-                <Link href="#">Galerija</Link>
-              </p>
-              <p>
-                <Link href="#">Blog</Link>
-              </p>
-              <p>
-                <Link href="#">Katalog proizvoda</Link>
-              </p>
-              <div className="flex items-center gap-x-4 md:hidden pt-12 text-black dark:text-white">
-                <Button variant="secondary">
-                  <Link href="#">Contact</Link>
-                </Button>
-                <ModeToggle />
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </nav>
   );
 }

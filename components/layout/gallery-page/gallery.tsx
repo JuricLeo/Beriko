@@ -83,7 +83,7 @@ export default function Gallery() {
       <LightGallery
         speed={500}
         plugins={[lgThumbnail]}
-        elementClassNames="grid sm:grid-cols-2 md:grid-cols-3 sm:gap-4"
+        elementClassNames="grid sm:grid-cols-2 md:grid-cols-3 gap-4"
       >
         {images.map(({ src, alt }) => (
           <Link href={src} key={src}>

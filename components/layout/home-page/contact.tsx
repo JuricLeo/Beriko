@@ -7,9 +7,69 @@ import { FaXTwitter } from "react-icons/fa6";
 import { IoLogoInstagram } from "react-icons/io5";
 import { FiFacebook } from "react-icons/fi";
 
-export default function contact() {
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+
+function EmailForm() {
+  const formSchema = z.object({
+    name: z
+      .string()
+      .min(2, "Ime mora biti duže od 2 slova.")
+      .max(50, "Ime mora biti kraće od 50 slova."),
+    surname: z
+      .string()
+      .min(2, "Prezime mora biti duže od 2 slova.")
+      .max(50, "Prezime mora biti kraće od 50 slova."),
+    email: z
+      .string()
+      .min(2, "Unesite email")
+      .max(100, "Email mora biti kraći od 100 znakova."),
+    phone: z
+      .number()
+      .min(2, "Broj telefona mora biti duži od 2 broja.")
+      .max(50, "Broj telefona mora biti kraći od 50 brojeva."),
+    message: z
+      .string()
+      .min(2, "Poruka mora biti duža od 2 znaka.")
+      .max(500, "Poruka mora biti kraća od 500 znakova."),
+  });
+
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      surname: "",
+      email: "",
+      phone: undefined,
+      message: "",
+    },
+  });
+
+  function onSubmit(values: z.infer<typeof formSchema>) {
+    // Do something with the form values.
+    // ✅ This will be type-safe and validated.
+    console.log(values);
+  }
+
+  return { form, onSubmit };
+}
+
+export default function Contact() {
+  const { form, onSubmit } = EmailForm();
+
   return (
-    <section className="relative py-12 sm:py-24 lg:py-10 px-3 md:px-10 lg:px-24 bg-gradient-to-b from-primary/30 to-primary/60 h-[68rem] sm:h-[58rem] lg:h-[40rem]">
+    <section className="relative py-12 sm:py-24 lg:py-10 px-3 md:px-10 lg:px-24 bg-gradient-to-b from-primary/30 to-primary/60 h-[78rem] sm:h-[64rem] lg:h-[45rem]">
       <div className="bg-primary flex-col lg:hidden top-0 text-white w-[70%] h-[21rem] mt-10 absolute z-10 shadow-md p-8 mx-auto left-0 right-0">
         <h2 className="text-2xl text-center font-semibold">Kontakt Info</h2>
         <div className="mt-6 space-y-4">
@@ -85,56 +145,112 @@ export default function contact() {
           </Link>
         </div>
       </div>
-      <div className="bg-white w-full lg:w-[80%] h-[45rem] sm:h-[35rem] lg:ml-48 relative shadow-md mt-72 sm:mt-60 lg:mt-0">
+      <div className="bg-white w-full lg:w-[80%] pb-16 lg:ml-48 relative shadow-md mt-72 sm:mt-60 lg:mt-0">
         <div className="lg:ml-60 ml-8 pt-16">
           <h1 className="text-2xl text-center mr-10 sm:mr-0 sm:text-left font-semibold">
             Pošaljite nam upit!
           </h1>
-          <form className="flex flex-col">
-            <div className="flex flex-col sm:flex-row space-y-6 sm:space-y-0 mt-8">
-              <div className="flex flex-col flex-1 pr-8">
-                <label className="text-primary text-xs">Ime</label>
-                <input
-                  className="border-b border-newBlack py-2"
-                  type="text"
-                  placeholder="Bernard"
-                />
+          <Form {...form}>
+            <form
+              onSubmit={form.handleSubmit(onSubmit)}
+              className="flex flex-col"
+            >
+              <div className="flex flex-col sm:flex-row space-y-6 sm:space-y-0 mt-8">
+                <div className="flex flex-col flex-1 pr-8">
+                  <FormField
+                    control={form.control}
+                    name="name"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-primary text-xs">
+                          Ime
+                        </FormLabel>
+                        <FormControl className="border-b border-newBlack py-2">
+                          <Input placeholder="Bernard" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+                <div className="flex flex-col flex-1 pr-8">
+                  <FormField
+                    control={form.control}
+                    name="surname"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-primary text-xs">
+                          Prezime
+                        </FormLabel>
+                        <FormControl className="border-b border-newBlack py-2">
+                          <Input placeholder="Domović" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
               </div>
-              <div className="flex flex-col flex-1 pr-8">
-                <label className="text-primary text-xs">Prezime</label>
-                <input
-                  className="border-b border-newBlack py-2"
-                  type="text"
-                  placeholder="Domović"
-                />
+              <div className="flex flex-col sm:flex-row space-y-6 sm:space-y-0 mt-8">
+                <div className="flex flex-col flex-1 pr-8">
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-primary text-xs">
+                          Email
+                        </FormLabel>
+                        <FormControl className="border-b border-newBlack py-2">
+                          <Input placeholder="beriko@beriko.com" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+                <div className="flex flex-col flex-1 pr-8">
+                  <FormField
+                    control={form.control}
+                    name="phone"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-primary text-xs">
+                          Telefon
+                        </FormLabel>
+                        <FormControl className="border-b border-newBlack py-2">
+                          <Input placeholder="+385 98 64 62 60" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
               </div>
-            </div>
-            <div className="flex flex-col sm:flex-row space-y-6 sm:space-y-0 mt-8">
-              <div className="flex flex-col flex-1 pr-8">
-                <label className="text-primary text-xs">Email</label>
-                <input
-                  className="border-b border-newBlack py-2"
-                  type="email"
-                  placeholder="beriko@beriko.com"
-                />
-              </div>
-              <div className="flex flex-col flex-1 pr-8">
-                <label className="text-primary text-xs">Telefon</label>
-                <input
-                  className="border-b border-newBlack py-2"
-                  type="phone"
-                  placeholder="+385 98 64 62 60"
-                />
-              </div>
-            </div>
-            <textarea
-              placeholder="Upišite svoj upit..."
-              className="resize-none border-b border-newBlack py-2 mt-6 mr-8 h-32"
-            ></textarea>
-            <Button className="w-24 mt-12 sm:mt-8 ml-auto mr-8 sm:ml-0 sm:mr-0">
-              Pošalji
-            </Button>
-          </form>
+              <FormField
+                control={form.control}
+                name="message"
+                render={({ field }) => (
+                  <FormItem className="mt-6 py-2 mr-8 h-32">
+                    <FormLabel className="text-primary text-xs">
+                      Poruka
+                    </FormLabel>
+                    <FormControl className="border-b border-newBlack py-2">
+                      <Textarea
+                        className="resize-none"
+                        placeholder="Upišite svoj upit..."
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <Button className="w-24 mt-12 sm:mt-8 ml-auto mr-8 sm:ml-0 sm:mr-0">
+                Pošalji
+              </Button>
+            </form>
+          </Form>
         </div>
       </div>
     </section>

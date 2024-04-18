@@ -3,14 +3,14 @@ import Image from "next/image";
 
 export default function ContactForm() {
   return (
-    <div className="bg-primary/20 pb-20">
+    <section className="py-5 lg:py-12 px-3 md:px-10 lg:px-24 bg-primary/20 text-black">
       <section className="w-[90%] mx-auto">
-        <div className="md:py-16 py-10 ">
-          <h1 className="text-center font-extrabold text-4xl">
+        <div className=" py-10 ">
+          <h1 className="text-center pb-5 md:pb-10 font-semibold text-4xl">
             Kontakt informacije
           </h1>
         </div>
-        <div className="flex ">
+        <div className="flex">
           <Image
             src="/images/garage1.jpeg"
             alt="Carousel image"
@@ -72,6 +72,6 @@ export default function ContactForm() {
           </div>
         </div>
       </section>
-    </div>
+    </section>
   );
 }

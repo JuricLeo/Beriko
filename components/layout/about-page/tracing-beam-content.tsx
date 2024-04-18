@@ -14,7 +14,7 @@ export function Timeline() {
               index % 2 === 0 ? "md:flex-row " : "md:flex-row-reverse "
             }`}
           >
-            <div className="md:w-6/12 px-4">
+            <div className="md:w-6/12 md:px-4">
               {item.badge && item.badge.trim() !== "" && (
                 <h2 className="bg-black text-white rounded-full text-sm w-fit px-4 py-1 mb-4">
                   {item.badge}
@@ -22,7 +22,9 @@ export function Timeline() {
               )}
 
               <p className="text-4xl  mb-4 fon font-bold">{item.title}</p>
-              <div className="space-y-3 mb-5 w-10/12 ">{item.description}</div>
+              <div className="space-y-3  mb-5 w-full md:w-10/12   ">
+                {item.description}
+              </div>
             </div>
 
             <div className="text-sm prose prose-sm dark:prose-invert md:w-6/12 flex items-center justify-center">

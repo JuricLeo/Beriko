@@ -5,21 +5,21 @@ import { IoLogoInstagram } from "react-icons/io5";
 
 export default function ContactInfo() {
   return (
-    <div className="bg-primary/20">
-      <section className=" pb-10 w-[95%] mx-auto ">
-        <h1 className="font-extrabold text-4xl   text-center">Javite nam se</h1>
+    <section className="py-5 lg:py-20 px-3 md:px-10 lg:px-10 bg-primary/20 text-black">
+      <section className=" w-[95%] mx-auto ">
+        <h1 className="font-semibold text-4xl   text-center">Javite nam se</h1>
         <hr className="w-28 h-2 mx-auto mt-5 bg-primary border-0 rounded   " />
 
-        <div className="flex flex-col md:flex-row md:justify-around md:items-center space-y-5 md:space-y-0 md:py-12 py-10 w-full ">
-          <div className="text-black bg-primary/20 w-full md:w-[30%] lg:w-[25%] flex flex-col justify-center  gap-y-5 items-center p-10 rounded-sm shadow-xl ">
-            <Phone size={36} strokeWidth={1.5} />
-            <p className="font-bold text-xl">Telefon</p>
-            <p>+385 97 644 5543</p>
+        <div className="flex md:mt-10 flex-col md:flex-row md:justify-around md:items-center space-y-7 md:space-y-0 md:py-12 py-10 w-full ">
+          <div className="text-black bg-primary/20 w-full md:w-[30%] lg:w-[25%] flex flex-col justify-center  gap-y-5 items-center p-20 rounded-sm shadow-xl ">
+            <Phone className="m-auto w-12 h-12" />
+            <p className="font-bold text-3xl">Telefon</p>
+            <p className="texts-sm font-semibold">+385 97 644 5543</p>
           </div>
 
-          <div className="text-black bg-primary/20 w-full  md:w-[35%] lg:w-[25%]  flex flex-col justify-center gap-y-5 items-center p-10 rounded-sm shadow-xl ">
-            <UsersRound size={36} strokeWidth={1.5} />
-            <p className="font-bold text-xl">Društvene mreže</p>
+          <div className="text-black bg-primary/20 w-full  md:w-[35%] lg:w-[25%]  flex flex-col justify-center gap-y-5 items-center py-20 px-10 rounded-sm shadow-xl ">
+            <UsersRound className="m-auto w-12 h-12" />
+            <p className="font-bold text-center text-3xl">Društvene mreže</p>
             <div className="flex items-center justify-center gap-x-5  ">
               <Link
                 href="#"
@@ -35,18 +35,18 @@ export default function ContactInfo() {
               </Link>
             </div>
           </div>
-          <div className="text-black bg-primary/20 w-full md:w-[30%] lg:w-[25%]  flex flex-col justify-center gap-y-5 items-center  p-10 rounded-sm shadow-xl ">
-            <Mail size={36} strokeWidth={1.5} />
-            <p className="font-bold text-xl">Email</p>
-            <p>
+          <div className="text-black bg-primary/20 w-full md:w-[30%] lg:w-[25%]  flex flex-col justify-center gap-y-5 items-center  p-20 rounded-sm shadow-xl ">
+            <Mail className="m-auto h-12 w-12" />
+            <p className="font-bold text-3xl">Email</p>
+            <p className="font-semibold">
               <Link href="mailto:beriko@gmail.com">beriko@gmail.com</Link>
             </p>
           </div>
         </div>
-        <div className=" w-full text-center text-4xl font-extrabold">
+        <div className="mt-20 w-full text-center text-4xl font-semibold">
           <h1>Pronađite nas ovdje!</h1>
         </div>
       </section>
-    </div>
+    </section>
   );
 }

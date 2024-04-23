@@ -8,7 +8,7 @@
 //     // Mailgun configuration
 //     const mailgunAuth = {
 //       auth: {
-//         api_key: 'def5ec2faf361567ce72e19000609684-19806d14-332dc19e',
+//         api_key: '',
 //         domain: 'your-mailgun-domain',
 //       }
 //     };

@@ -11,11 +11,19 @@ import FAQSection from "@/components/layout/home-page/faqs-section";
 import Map from "@/components/layout/home-page/map";
 
 import dynamic from "next/dynamic";
+import { Skeleton } from "@/components/ui/skeleton";
 
-const LazyMap = dynamic(() => import("@/components/layout/home-page/leaflet-map"), {
-  ssr: false,
-  loading: () => <p>Loading...</p>,
-});
+const LazyMap = dynamic(
+  () => import("@/components/layout/home-page/leaflet-map"),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="py-12 sm:py-24 lg:py-10 px-3 md:px-10 lg:px-24">
+        <Skeleton className="w-full h-[30rem]" />,
+      </div>
+    ),
+  }
+);
 
 export default function Home() {
   return (

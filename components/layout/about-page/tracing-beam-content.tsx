@@ -73,7 +73,7 @@ const dummyContent = [
       "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=3540&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    title: "SAVRŠEN IZBOR",
+    title: "PRVI RAD",
     description: (
       <div className="space-y-3">
         <p>
@@ -87,13 +87,12 @@ const dummyContent = [
         </p>
       </div>
     ),
-    badge: "",
+    badge: "28.10.2003.",
     image:
       "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&q=80&w=3540&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    title: "NAŠ CILJ",
-
+    title: "100. ZADOVOLJEN KUPAC",
     description: (
       <p className="leading-7">
         U središtu našeg cilja nalazi se kontinuirana predanost izvrsnosti i
@@ -103,13 +102,12 @@ const dummyContent = [
         izazov, već prilika za stvaranje nečeg izvanrednog.
       </p>
     ),
-    badge: "",
+    badge: "28.10.2003.",
     image:
       "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80&w=3506&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    title: "VIZIJA",
-
+    title: "DANAS",
     description: (
       <div className="space-y-3">
         <p className="leading-7">
@@ -121,7 +119,6 @@ const dummyContent = [
         <p className="leading-7">Dobrodošli u naš svijet.</p>
       </div>
     ),
-    badge: "",
     image:
       "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80&w=3506&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },

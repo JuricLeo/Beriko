@@ -33,11 +33,11 @@ export default function FeatureGarages() {
           </div>
         </div>
         <Image
-          src="/images/garage1.jpeg"
-          alt="Carousel image"
-          width={10}
-          height={10}
-          className="hidden lg:block w-[450px] h-[600px] 2xl:w-[700px] 2xl:h-[800px]"
+          src="/feature-garages.jpg"
+          alt="Garažna vrata"
+          width={1200}
+          height={1200}
+          className="hidden lg:block w-[450px] h-[450px] 2xl:w-[700px] 2xl:h-[800px]"
         />
       </div>
     </section>

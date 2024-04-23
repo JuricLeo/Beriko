@@ -36,7 +36,7 @@ function EmailForm() {
       .min(2, "Unesite email")
       .max(100, "Email mora biti kraći od 100 znakova."),
     phone: z
-      .number()
+      .string()
       .min(2, "Broj telefona mora biti duži od 2 broja.")
       .max(50, "Broj telefona mora biti kraći od 50 brojeva."),
     message: z
@@ -48,19 +48,31 @@ function EmailForm() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      name: "",
-      surname: "",
-      email: "",
-      phone: undefined,
-      message: "",
+      name: "Leopold",
+      surname: "Jurić",
+      email: "leo.jurich@gmail.com",
+      phone: "0976900379",
+      message: "dsafasdfasdf",
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
+  function onSubmit(values: any) {
+    fetch('/api/sendEmail', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(values),
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Success:', data);
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
   }
+  
 
   return { form, onSubmit };
 }

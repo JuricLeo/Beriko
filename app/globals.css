@@ -40,7 +40,7 @@ input:focus {
 .contact-form-section-bg {
   background-image: url("/kontakt-forma-bg.png");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
 }
 
 .hero-image {

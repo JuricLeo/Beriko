@@ -5,13 +5,13 @@ export default function FeatureStrenght() {
     <section className="py-12 sm:py-24 lg:py-10 px-3 md:px-10 lg:px-24 bg-primary/30">
       <div className="flex items-center justify-center">
         <Image
-          src="/images/garage1.jpeg"
-          alt="Carousel image"
-          width={10}
-          height={10}
-          className="hidden lg:block w-[350px] h-[500px] 2xl:w-[700px] 2xl:h-[800px]"
+          src="/feature-strength.jpg"
+          alt="Montažne kućice"
+          width={1600}
+          height={1600}
+          className="hidden xl:block w-[500px] h-[350px] 2xl:w-[700px] 2xl:h-[800px]"
         />
-        <div className="space-y-10 lg:pl-24 justify-center lg:w-[70%]">
+        <div className="space-y-10 xl:pl-24 justify-center xl:w-[70%]">
           <h1 className="text-right ml-auto 2xl:text-6xl text-4xl sm:text-5xl font-semibold sm:min-w-[400px] max-w-[700px]">
             Otkrijte Snagu i Prilagodljivost Naših Montažnih Objekata.
           </h1>

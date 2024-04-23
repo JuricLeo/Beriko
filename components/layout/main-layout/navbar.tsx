@@ -6,7 +6,6 @@ import Link from "next/link";
 import { ModeToggle } from "../../mode-toggle";
 import { Button } from "../../ui/button";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { IoMdClose } from "react-icons/io";
 
 import {
   DropdownMenu,
@@ -28,7 +27,7 @@ export default function Navbar() {
   const [isSheetOpen, setIsSheetOpen] = useState(false);
   const [scrolling, setScrolling] = useState(false);
 
-  const toggleSheet = () => setIsSheetOpen(prev => !prev);
+  const toggleSheet = () => setIsSheetOpen((prev) => !prev);
   const closeSheet = () => setIsSheetOpen(false);
 
   useEffect(() => {
@@ -53,11 +52,15 @@ export default function Navbar() {
         }`}
       >
         <div className="flex items-center">
-          <Image alt="Beriko" src="/logo.png" width={200} height={200} />
+          <Link href="/">
+            <Image alt="Beriko" src="/logo.png" width={200} height={200} />
+          </Link>
           <div className="gap-x-10 mr-10 hidden lg:flex">
-            <Link href="/">Naslovna</Link>
             <Link href="/about">O nama</Link>
             <Link href="/reviews">Recenzije</Link>
+            <Link href="/blog">
+              Blog
+            </Link>
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center">
                 Ostalo <ChevronDown className="w-4 h-4 ml-2" />
@@ -65,9 +68,6 @@ export default function Navbar() {
               <DropdownMenuContent>
                 <Link href="/gallery">
                   <DropdownMenuItem>Galerija</DropdownMenuItem>
-                </Link>
-                <Link href="/blog">
-                  <DropdownMenuItem>Blog</DropdownMenuItem>
                 </Link>
                 <Link href="/products">
                   <DropdownMenuItem>Katalog proizvoda</DropdownMenuItem>
@@ -82,7 +82,7 @@ export default function Navbar() {
               <ModeToggle />
             </div>
             <Link href="/contact">
-              <Button>Contact</Button>
+              <Button>Kontakt</Button>
             </Link>
           </div>
           <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
@@ -97,15 +97,29 @@ export default function Navbar() {
                 <SheetTitle className="text-newWhite/60">Navigacija</SheetTitle>
                 <SheetDescription>
                   <div className="space-y-10 flex flex-col mt-[10%] p-8 text-lg text-newWhite">
-                    <Link href="/" onClick={closeSheet}>Naslovna</Link>
-                    <Link href="/about" onClick={closeSheet}>O nama</Link>
-                    <Link href="/reviews" onClick={closeSheet}>Recenzije</Link>
-                    <Link href="/gallery" onClick={closeSheet}>Galerija</Link>
-                    <Link href="/blog" onClick={closeSheet}>Blog</Link>
-                    <Link href="/products" onClick={closeSheet}>Katalog proizvoda</Link>
+                    <Link href="/" onClick={closeSheet}>
+                      Naslovna
+                    </Link>
+                    <Link href="/about" onClick={closeSheet}>
+                      O nama
+                    </Link>
+                    <Link href="/reviews" onClick={closeSheet}>
+                      Recenzije
+                    </Link>
+                    <Link href="/gallery" onClick={closeSheet}>
+                      Galerija
+                    </Link>
+                    <Link href="/blog" onClick={closeSheet}>
+                      Blog
+                    </Link>
+                    <Link href="/products" onClick={closeSheet}>
+                      Katalog proizvoda
+                    </Link>
                     <div className="flex items-center justify-center md:justify-left gap-x-4 md:hidden pt-12 text-black dark:text-white">
                       <Button variant="secondary">
-                        <Link href="/contact" onClick={closeSheet}>Contact</Link>
+                        <Link href="/contact" onClick={closeSheet}>
+                          Kontakt
+                        </Link>
                       </Button>
                       <ModeToggle />
                     </div>

@@ -50,40 +50,46 @@ export default function Footer() {
             <div className="flex flex-col space-y-4">
               <h2 className="text-slate-700 text-lg mb-4">Navigacija</h2>
               <Link
-                href="#"
+                href="/"
                 className="ml-4 md:ml-0 hover:opacity-75 duration-300"
               >
                 Naslovna
               </Link>
               <Link
-                href="#"
+                href="/about"
                 className="ml-4 md:ml-0 hover:opacity-75 duration-300"
               >
                 O nama
               </Link>
               <Link
-                href="#"
+                href="/reviews"
                 className="ml-4 md:ml-0 hover:opacity-75 duration-300"
               >
                 Recenzije
               </Link>
               <Link
-                href="#"
+                href="/gallery"
                 className="ml-4 md:ml-0 hover:opacity-75 duration-300"
               >
                 Galerija
               </Link>
               <Link
-                href="#"
+                href="/blog"
                 className="ml-4 md:ml-0 hover:opacity-75 duration-300"
               >
                 Blog
+              </Link>
+              <Link
+                href="/products"
+                className="ml-4 md:ml-0 hover:opacity-75 duration-300"
+              >
+                Katalog proizvoda
               </Link>
             </div>
             <div className="flex flex-col space-y-4">
               <h2 className="text-slate-700 text-lg mb-4">Pomoć</h2>
               <Link
-                href="#"
+                href="/contact"
                 className="ml-4 md:ml-0 hover:opacity-75 duration-300"
               >
                 Kontakt

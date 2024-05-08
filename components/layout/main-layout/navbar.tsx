@@ -22,6 +22,8 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { ChevronDown } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 export default function Navbar() {
   const [isSheetOpen, setIsSheetOpen] = useState(false);
@@ -44,11 +46,55 @@ export default function Navbar() {
     };
   }, [scrolling]);
 
+  const pathname = usePathname();
+
+  const routesBig = [
+    {
+      label: "O nama",
+      href: "/about",
+    },
+    {
+      label: "Galerija",
+      href: "/gallery",
+    },
+    {
+      label: "Katalog proizvoda",
+      href: "/products",
+    },
+  ];
+
+  const routesSmall = [
+    {
+      label: "Naslovna",
+      href: "/",
+    },
+    {
+      label: "O nama",
+      href: "/about",
+    },
+    {
+      label: "Galerija",
+      href: "/gallery",
+    },
+    {
+      label: "Katalog proizvoda",
+      href: "/products",
+    },
+    {
+      label: "Recenzije",
+      href: "/reviews",
+    },
+    {
+      label: "Blog",
+      href: "/blog",
+    },
+  ]
+
   return (
     <nav className="max-w-full fixed top-0 left-0 right-0 z-50 bg-black/30 text-newWhite">
       <div
         className={`px-3 md:px-10 lg:px-24 py-6 flex justify-between items-center transition-all duration-300 ${
-          scrolling ? "bg-[color:var(--light)] text-newBlack" : "bg-transparent"
+          pathname === "/about" || pathname == "/gallery" || scrolling ? "bg-[color:var(--light)] text-newBlack" : "bg-transparent"
         }`}
       >
         <div className="flex items-center">
@@ -56,21 +102,28 @@ export default function Navbar() {
             <Image alt="Beriko" src="/logo.png" width={200} height={200} />
           </Link>
           <div className="gap-x-10 mr-10 hidden lg:flex">
-            <Link href="/about">O nama</Link>
-            <Link href="/reviews">Recenzije</Link>
-            <Link href="/blog">
-              Blog
-            </Link>
+            {routesBig.map((route) => (
+              <Link
+                key={route.href}
+                href={route.href}
+                className={cn(
+                  "",
+                  pathname === route.href ? "border-b border-newBlack" : ""
+                )}
+              >
+                {route.label}
+              </Link>
+            ))}
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center">
                 Ostalo <ChevronDown className="w-4 h-4 ml-2" />
               </DropdownMenuTrigger>
               <DropdownMenuContent>
-                <Link href="/gallery">
-                  <DropdownMenuItem>Galerija</DropdownMenuItem>
+                <Link href="/reviews">
+                  <DropdownMenuItem>Recenzije</DropdownMenuItem>
                 </Link>
-                <Link href="/products">
-                  <DropdownMenuItem>Katalog proizvoda</DropdownMenuItem>
+                <Link href="/blog">
+                  <DropdownMenuItem>Blog</DropdownMenuItem>
                 </Link>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -97,24 +150,19 @@ export default function Navbar() {
                 <SheetTitle className="text-newWhite/60">Navigacija</SheetTitle>
                 <SheetDescription>
                   <div className="space-y-10 flex flex-col mt-[10%] p-8 text-lg text-newWhite">
-                    <Link href="/" onClick={closeSheet}>
-                      Naslovna
-                    </Link>
-                    <Link href="/about" onClick={closeSheet}>
-                      O nama
-                    </Link>
-                    <Link href="/reviews" onClick={closeSheet}>
-                      Recenzije
-                    </Link>
-                    <Link href="/gallery" onClick={closeSheet}>
-                      Galerija
-                    </Link>
-                    <Link href="/blog" onClick={closeSheet}>
-                      Blog
-                    </Link>
-                    <Link href="/products" onClick={closeSheet}>
-                      Katalog proizvoda
-                    </Link>
+                  {routesSmall.map((route) => (
+                      <Link
+                        key={route.href}
+                        href={route.href}
+                        onClick={closeSheet}
+                        className={cn(
+                          "",
+                          pathname === route.href ? "w-fit border-b" : ""
+                        )}
+                      >
+                        {route.label}
+                      </Link>
+                    ))}
                     <div className="flex items-center justify-center md:justify-left gap-x-4 md:hidden pt-12 text-black dark:text-white">
                       <Button variant="secondary">
                         <Link href="/contact" onClick={closeSheet}>

@@ -1,3 +1,9 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: 'Politika Privatnosti - Beriko'
+}
+
 const PrivacyPolicy = () => {
   return (
     <main>

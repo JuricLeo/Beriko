@@ -8,7 +8,7 @@ import {
 export default function FAQSection() {
   return (
     <section className="py-12 sm:py-24 lg:py-16 mb-8 px-3 md:px-10 lg:px-24">
-      <h1 className="text-4xl font-semibold">FAQs</h1>
+      <h1 className="text-4xl font-semibold mb-10">FAQs</h1>
       <p className="mt-4 mb-8">
         Pronađite odgovore na najčešće postavljena pitanja o našim montažnim
         objektima i garažnim vratima.

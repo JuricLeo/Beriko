@@ -43,9 +43,6 @@ export default function ContactInfo() {
             </p>
           </div>
         </div>
-        <div className="mt-20 w-full text-center text-4xl font-semibold">
-          <h1>Pronađite nas ovdje!</h1>
-        </div>
       </section>
     </section>
   );

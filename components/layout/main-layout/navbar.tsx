@@ -88,13 +88,19 @@ export default function Navbar() {
       label: "Blog",
       href: "/blog",
     },
-  ]
+  ];
 
   return (
     <nav className="max-w-full fixed top-0 left-0 right-0 z-50 bg-black/30 text-newWhite">
       <div
         className={`px-3 md:px-10 lg:px-24 py-6 flex justify-between items-center transition-all duration-300 ${
-          pathname === "/about" || pathname == "/gallery" || scrolling ? "bg-[color:var(--light)] text-newBlack" : "bg-transparent"
+          pathname === "/about" ||
+          pathname == "/gallery" ||
+          pathname == "/reviews" ||
+          pathname == "/blog" ||
+          scrolling
+            ? "bg-[color:var(--light)] text-newBlack"
+            : "bg-transparent"
         }`}
       >
         <div className="flex items-center">
@@ -150,25 +156,25 @@ export default function Navbar() {
                 <SheetTitle className="text-newWhite/60">Navigacija</SheetTitle>
                 <SheetDescription>
                   <div className="space-y-10 flex flex-col mt-[10%] p-8 text-lg text-newWhite">
-                  {routesSmall.map((route) => (
+                    {routesSmall.map((route) => (
                       <Link
                         key={route.href}
                         href={route.href}
                         onClick={closeSheet}
                         className={cn(
                           "",
-                          pathname === route.href ? "w-fit border-b" : ""
+                          pathname === route.href
+                            ? "text-[color:var(--analogous)]"
+                            : ""
                         )}
                       >
                         {route.label}
                       </Link>
                     ))}
                     <div className="flex items-center justify-center md:justify-left gap-x-4 md:hidden pt-12 text-black dark:text-white">
-                      <Button variant="secondary">
-                        <Link href="/contact" onClick={closeSheet}>
-                          Kontakt
-                        </Link>
-                      </Button>
+                      <Link href="/contact" onClick={closeSheet}>
+                        <Button variant="secondary">Kontakt</Button>
+                      </Link>
                       <ModeToggle />
                     </div>
                   </div>

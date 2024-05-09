@@ -32,9 +32,18 @@ input:focus {
 }
 
 .contact-hero-section-bg {
-  background-image: url("/contact-header-img.jpg");
+  background-image: url("/images/hero-images/contact-header-img.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+@media(max-width: 1000px) {
+  .contact-hero-section-bg {
+    background-image: url("/images/hero-images/contact-header-img.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
 }
 
 .contact-form-section-bg {
@@ -45,7 +54,7 @@ input:focus {
 
 .hero-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("/images/hero-garage.jpeg");
+    url("/images/hero-images/hero-garage.jpeg");
   height: 50%;
   background-position: center;
   background-repeat: no-repeat;
@@ -55,7 +64,7 @@ input:focus {
 
 .products-hero-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("/images/products-hero.jpg");
+    url("/images/hero-images/products-hero.jpg");
   height: 50%;
   background-position: center;
   background-repeat: no-repeat;

@@ -5,7 +5,7 @@ export default function FeatureStrenght() {
     <section className="py-12 sm:py-24 lg:py-10 px-3 md:px-10 lg:px-24 bg-primary/30">
       <div className="flex items-center justify-center">
         <Image
-          src="/feature-strength.jpg"
+          src="/images/feature-strength.jpg"
           alt="Montažne kućice"
           width={1600}
           height={1600}

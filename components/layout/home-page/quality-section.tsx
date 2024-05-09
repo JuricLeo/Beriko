@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function QualitySection() {
   return (
@@ -27,12 +28,14 @@ export default function QualitySection() {
               <p>Na zadovoljstvu kupaca</p>
             </div>
           </div>
-          <Button
-            variant="outline"
-            className="border-2 border-[color:var(--analogous)] mt-12"
-          >
-            Saznajte više
-          </Button>
+          <Link href="/reviews">
+            <Button
+              variant="outline"
+              className="border-2 border-[color:var(--analogous)] mt-12"
+            >
+              Saznajte više
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

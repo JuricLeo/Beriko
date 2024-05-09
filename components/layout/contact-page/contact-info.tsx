@@ -22,13 +22,13 @@ export default function ContactInfo() {
             <p className="font-bold text-center text-3xl">Društvene mreže</p>
             <div className="flex items-center justify-center gap-x-5  ">
               <Link
-                href="#"
+                href="https://www.facebook.com/profile.php?id=61556832431837"
                 className="rounded-md p-4 bg-newWhite text-newBlack hover:opacity-75 duration-300"
               >
                 <FiFacebook size={20} />
               </Link>
               <Link
-                href="#"
+                href="https://www.instagram.com/beriko.buildings/"
                 className="rounded-md p-4 bg-newWhite text-newBlack hover:opacity-75 duration-300"
               >
                 <IoLogoInstagram size={20} />

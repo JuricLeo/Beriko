@@ -29,22 +29,16 @@ export default function Footer() {
                 O nama
               </h2>
               <Link
-                href="#"
+                href="/about"
                 className="ml-4 md:ml-0 hover:opacity-75 duration-300"
               >
-                Timeline
+                Povijest firme
               </Link>
               <Link
-                href="#"
+                href="/about/#team"
                 className="ml-4 md:ml-0 hover:opacity-75 duration-300"
               >
-                Nesto
-              </Link>
-              <Link
-                href="#"
-                className="ml-4 md:ml-0 hover:opacity-75 duration-300"
-              >
-                Dada
+                Naš tim
               </Link>
             </div>
             <div className="flex flex-col space-y-4">
@@ -62,28 +56,28 @@ export default function Footer() {
                 O nama
               </Link>
               <Link
-                href="/reviews"
-                className="ml-4 md:ml-0 hover:opacity-75 duration-300"
-              >
-                Recenzije
-              </Link>
-              <Link
                 href="/gallery"
                 className="ml-4 md:ml-0 hover:opacity-75 duration-300"
               >
                 Galerija
               </Link>
               <Link
-                href="/blog"
-                className="ml-4 md:ml-0 hover:opacity-75 duration-300"
-              >
-                Blog
-              </Link>
-              <Link
                 href="/products"
                 className="ml-4 md:ml-0 hover:opacity-75 duration-300"
               >
                 Katalog proizvoda
+              </Link>
+              <Link
+                href="/reviews"
+                className="ml-4 md:ml-0 hover:opacity-75 duration-300"
+              >
+                Recenzije
+              </Link>
+              <Link
+                href="/blog"
+                className="ml-4 md:ml-0 hover:opacity-75 duration-300"
+              >
+                Blog
               </Link>
             </div>
             <div className="flex flex-col space-y-4">
@@ -95,7 +89,7 @@ export default function Footer() {
                 Kontakt
               </Link>
               <Link
-                href="#"
+                href="/contact/#FAQs"
                 className="ml-4 md:ml-0 hover:opacity-75 duration-300"
               >
                 FAQs
@@ -115,19 +109,13 @@ export default function Footer() {
           </h2>
           <div className="flex justify-center space-x-4">
             <Link
-              href="#"
+              href="https://www.facebook.com/profile.php?id=61556832431837"
               className="rounded-md p-4 bg-slate-500 text-white hover:opacity-75 duration-300"
             >
               <FaFacebookF size={20} />
             </Link>
             <Link
-              href="#"
-              className="rounded-md p-4 bg-slate-500 text-white hover:opacity-75 duration-300"
-            >
-              <FaXTwitter size={20} />
-            </Link>
-            <Link
-              href="#"
+              href="https://www.instagram.com/beriko.buildings/"
               className="rounded-md p-4 bg-slate-500 text-white hover:opacity-75 duration-300"
             >
               <IoLogoInstagram size={20} />

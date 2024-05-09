@@ -100,22 +100,16 @@ export default function Contact() {
         </div>
         <div className="flex justify-center mt-8 space-x-4">
           <Link
-            href="#"
+            href="https://www.facebook.com/profile.php?id=61556832431837"
             className="rounded-md p-4 bg-newWhite text-newBlack hover:opacity-75 duration-300"
           >
-            <FiFacebook size={10} />
+            <FiFacebook size={20} />
           </Link>
           <Link
-            href="#"
+            href="https://www.instagram.com/beriko.buildings/"
             className="rounded-md p-4 bg-newWhite text-newBlack hover:opacity-75 duration-300"
           >
-            <FaXTwitter size={10} />
-          </Link>
-          <Link
-            href="#"
-            className="rounded-md p-4 bg-newWhite text-newBlack hover:opacity-75 duration-300"
-          >
-            <IoLogoInstagram size={10} />
+            <IoLogoInstagram size={20} />
           </Link>
         </div>
       </div>
@@ -138,19 +132,13 @@ export default function Contact() {
         </div>
         <div className="flex justify-start mt-16 space-x-4">
           <Link
-            href="#"
+            href="https://www.facebook.com/profile.php?id=61556832431837"
             className="rounded-md p-4 bg-newWhite text-newBlack hover:opacity-75 duration-300"
           >
             <FiFacebook size={16} />
           </Link>
           <Link
-            href="#"
-            className="rounded-md p-4 bg-newWhite text-newBlack hover:opacity-75 duration-300"
-          >
-            <FaXTwitter size={16} />
-          </Link>
-          <Link
-            href="#"
+            href="https://www.instagram.com/beriko.buildings/"
             className="rounded-md p-4 bg-newWhite text-newBlack hover:opacity-75 duration-300"
           >
             <IoLogoInstagram size={16} />

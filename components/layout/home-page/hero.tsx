@@ -7,13 +7,13 @@ export default function Hero() {
       <div className="flex items-center justify-center h-[35rem]">
         <div className="space-y-6 lg:pr-24 justify-center backdrop-blur-[3px] p-16 rounded-xl">
           <h1 className="2xl:text-6xl text-4xl sm:text-5xl font-semibold sm:min-w-[400px] max-w-[700px]">
-            Visoko Kvalitetni Montažni Objekti i Garažna Vrata
+            Visoko Kvalitetni montažni objekti:hale, bungalovi, skladišta,
+            radionice i garaže
           </h1>
           <p className="max-w-[500px] lg:max-w-[700px]">
             Beriko d.o.o specijalizira se u izradi visokokvalitetnih montažnih
-            objekata i garažnih vrata. Naše inovativne dizajne i trajni
-            materijali osiguravaju dugotrajnu izdržljivost i zadovoljstvo
-            kupaca.
+            objekata. Naše inovativne dizajne i trajni materijali osiguravaju
+            dugotrajnu izdržljivost i zadovoljstvo kupaca.
           </p>
           <div className="space-x-4">
             <Link href="/contact">

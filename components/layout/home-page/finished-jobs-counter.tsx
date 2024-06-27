@@ -41,7 +41,7 @@ export default function FinishedJobCounter() {
             <p className="text-3xl font-bold text-white/80">
               {isVisible && (
                 <div>
-                  <CountUp end={19} duration={3} />
+                  <CountUp end={21} duration={3} />
                 </div>
               )}
             </p>
@@ -73,7 +73,7 @@ export default function FinishedJobCounter() {
             <p className="text-3xl font-bold text-white/80">
               {isVisible && (
                 <div>
-                  <CountUp end={250} duration={4} />+
+                  <CountUp end={2150} duration={4} />+
                 </div>
               )}
             </p>

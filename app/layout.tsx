@@ -10,9 +10,10 @@ import CookieConsent from "@/components/layout/main-layout/cookie-consent";
 const font = Manrope({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Beriko - Montažni Objekti i Garažna Vrata",
+  title:
+    "Beriko - Montažni Objekti, hale, bungalovi, skladišta. radionice i garaže",
   description:
-    "Beriko - Stručnjaci za izradu montažnih objekata i garažnih vrata. Nudimo visokokvalitetna, prilagodljiva i izdržljiva rješenja za montažne objekte i garažna vrata, uz izvrsnu uslugu i zadovoljstvo klijenata. Otkrijte inovativne i dugotrajne proizvode koji ispunjavaju vaše potrebe.",
+    "Beriko - Stručnjaci za izradu montažnih objekata. Nudimo visokokvalitetna, prilagodljiva i izdržljiva rješenja za montažne objekte i garažna vrata, uz izvrsnu uslugu i zadovoljstvo klijenata. Otkrijte inovativne i dugotrajne proizvode koji ispunjavaju vaše potrebe.",
 };
 
 export default function RootLayout({

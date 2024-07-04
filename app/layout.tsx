@@ -5,6 +5,7 @@ import Footer from "@/components/layout/main-layout/footer";
 import Navbar from "@/components/layout/main-layout/navbar";
 import { Toaster } from "sonner";
 import CookieConsent from "@/components/layout/main-layout/cookie-consent";
+import Script from "next/script";
 
 const font = Manrope({ subsets: ["latin"] });
 
@@ -28,6 +29,45 @@ export default function RootLayout({
         <Footer />
         <CookieConsent />
         <Toaster />
+        <Script id="statcounter-inline" strategy="afterInteractive">
+          {`
+            var sc_project=2425395;
+            var sc_security="40ea0fb5";
+            var scJsHost = (("https:" == document.location.protocol) ? "https://secure." : "http://www.");
+            var scriptElement = document.createElement("script");
+            scriptElement.src = scJsHost + "statcounter.com/counter/counter.js";
+            scriptElement.async = true;
+            document.body.appendChild(scriptElement);
+          `}
+        </Script>
+        <Script
+          src="https://secure.statcounter.com/counter/counter.js"
+          strategy="afterInteractive"
+        />
+        <span className="statcounter">
+          <a
+            id="sc_counter_2425395"
+            className="statcounter"
+            href="https://www.statcounter.com/"
+            target="_blank"
+          >
+            <img
+              src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAOAQMAAABJgO2XAAAABlBMVEUAAAAqJCRdVn+OAAAAAXRSTlMAQObYZgAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAE5JREFUCJljYMAN5GwqJJ+/P8/AYJx2xtogR7IByOCpZjg/s4HBPK/i9oMzNxsYrMt4Zxs2nAdJ8f42bDgIYpyRNuYBSoG0P2bvx2MBAwCtCBrT857ZxQAAAABJRU5ErkJggg=="
+              alt="StatCounter - Free Web Tracker and Counter"
+            />
+          </a>
+        </span>
+        <noscript>
+          <div className="statcounter">
+            <a title="web analytics" href="https://statcounter.com/">
+              <img
+                className="statcounter"
+                src="https://c.statcounter.com/2425395/0/40ea0fb5/0/"
+                alt="web analytics"
+              />
+            </a>
+          </div>
+        </noscript>
       </body>
     </html>
   );

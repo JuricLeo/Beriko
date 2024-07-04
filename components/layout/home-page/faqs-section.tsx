@@ -7,11 +7,14 @@ import {
 
 export default function FAQSection() {
   return (
-    <section className="py-12 sm:py-24 lg:py-16 mb-8 px-3 md:px-10 lg:px-24" id="FAQs">
+    <section
+      className="py-12 sm:py-24 lg:py-16 mb-8 px-3 md:px-10 lg:px-24"
+      id="FAQs"
+    >
       <h1 className="text-4xl font-semibold mb-10">FAQs</h1>
       <p className="mt-4 mb-8">
         Pronađite odgovore na najčešće postavljena pitanja o našim montažnim
-        objektima i garažnim vratima.
+        objektima.
       </p>
       <div>
         <Accordion type="multiple">
@@ -29,24 +32,25 @@ export default function FAQSection() {
           </AccordionItem>
           <AccordionItem value="item-2">
             <AccordionTrigger>
-              Koje su prednosti odabira garažnih vrata visoke kvalitete?
+              Kako se razlikuju montažni objekti od tradicionalnih građevinskih
+              metoda?
             </AccordionTrigger>
             <AccordionContent>
-              Garažna vrata visoke kvalitete pružaju bolju sigurnost, trajnost i
-              estetiku, štiteći vaše vozilo i imovinu od vanjskih elemenata i
-              neželjenih uljeza.
+              Montažni objekti se proizvode izvan gradilišta unaprijed,
+              koristeći prefabrikaciju, što rezultira bržom izgradnjom, nižim
+              troškovima i većom prilagodljivošću dizajna u usporedbi s
+              tradicionalnim metodama gradnje.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
             <AccordionTrigger>
-              Kako mogu odabrati pravu veličinu i stil garažnih vrata za svoj
-              dom?
+              Koje su prednosti odabira energetski efikasnih prozora?
             </AccordionTrigger>
             <AccordionContent>
-              Preporučujemo konzultaciju s profesionalnim instalaterom ili
-              dizajnerom kako biste odabrali garažna vrata koja odgovaraju
-              veličini i stilu vašeg doma te zadovoljavaju vaše potrebe i
-              preferencije.
+              Energetski efikasni prozori poboljšavaju izolaciju, smanjujući
+              troškove grijanja i hlađenja, te povećavaju udobnost unutar doma.
+              Takođe, smanjuju buku iz vanjskog okruženja i doprinose zaštiti
+              okoliša.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-4">

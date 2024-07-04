@@ -13,7 +13,6 @@ const ProductsPage = () => {
     <main>
       <HeroSection />
       <FirstProducts />
-
       <Contact />
     </main>
   );

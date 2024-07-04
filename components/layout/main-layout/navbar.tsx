@@ -137,9 +137,6 @@ export default function Navbar() {
         </div>
         <div className="flex items-center gap-x-4">
           <div className="hidden items-center gap-x-4 md:flex">
-            <div className="text-newBlack dark:text-newWhite">
-              <ModeToggle />
-            </div>
             <Link href="/contact">
               <Button>Kontakt</Button>
             </Link>
@@ -175,7 +172,6 @@ export default function Navbar() {
                       <Link href="/contact" onClick={closeSheet}>
                         <Button variant="secondary">Kontakt</Button>
                       </Link>
-                      <ModeToggle />
                     </div>
                   </div>
                 </SheetDescription>

@@ -21,6 +21,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const showStatCounterScript = false;
+
   return (
     <html lang="en">
       <body className={font.className}>
@@ -29,22 +31,20 @@ export default function RootLayout({
         <Footer />
         <CookieConsent />
         <Toaster />
-        <Script id="statcounter-inline" strategy="afterInteractive">
-          {`
-            var sc_project=2425395;
-            var sc_security="40ea0fb5";
-            var scJsHost = (("https:" == document.location.protocol) ? "https://secure." : "http://www.");
-            var scriptElement = document.createElement("script");
-            scriptElement.src = scJsHost + "statcounter.com/counter/counter.js";
-            scriptElement.async = true;
-            document.body.appendChild(scriptElement);
-          `}
-        </Script>
-        <Script
-          src="https://secure.statcounter.com/counter/counter.js"
-          strategy="afterInteractive"
-        />
-        <span className="statcounter">
+        {showStatCounterScript && (
+          <Script id="statcounter-inline" strategy="afterInteractive">
+            {`
+              var sc_project=2425395;
+              var sc_security="40ea0fb5";
+              var scJsHost = (("https:" == document.location.protocol) ? "https://secure." : "http://www.");
+              var scriptElement = document.createElement("script");
+              scriptElement.src = scJsHost + "statcounter.com/counter/counter.js";
+              scriptElement.async = true;
+              document.body.appendChild(scriptElement);
+            `}
+          </Script>
+        )}
+        <span className="statcounter hidden">
           <a
             id="sc_counter_2425395"
             className="statcounter"

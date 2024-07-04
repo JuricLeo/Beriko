@@ -112,8 +112,8 @@ export default function Contact() {
   const { form, onSubmit } = EmailForm();
 
   return (
-    <section className="relative py-12 sm:py-24 lg:py-10 px-3 md:px-10 lg:px-24 bg-gradient-to-b from-primary/30 to-primary/60 h-[78rem] sm:h-[64rem] lg:h-[45rem]">
-      <div className="bg-primary flex-col lg:hidden top-0 text-white w-[70%] h-[21rem] mt-10 absolute z-10 shadow-md p-8 mx-auto left-0 right-0">
+    <section className="relative py-12 sm:py-24 xl:py-10 px-3 md:px-10 xl:px-24 bg-gradient-to-b from-primary/30 to-primary/60 h-[78rem] sm:h-[64rem] xl:h-[45rem]">
+      <div className="bg-primary flex-col xl:hidden top-0 text-white w-[70%] h-[21rem] mt-10 absolute z-10 shadow-md p-8 mx-auto left-0 right-0">
         <h2 className="text-2xl text-center font-semibold">Kontakt Info</h2>
         <div className="mt-6 space-y-4">
           <div className="flex items-center md:items-top">
@@ -145,7 +145,7 @@ export default function Contact() {
         </div>
       </div>
       {/* big screen */}
-      <div className="bg-primary hidden lg:block text-white w-[25rem] h-[30rem] lg:mt-10 absolute z-10 shadow-md p-8">
+      <div className="bg-primary hidden xl:block text-white w-[25rem] h-[30rem] xl:mt-10 absolute z-10 shadow-md p-8">
         <h2 className="text-2xl font-semibold">Kontakt Info</h2>
         <div className="mt-16 space-y-8">
           <div className="flex items-top">
@@ -176,10 +176,10 @@ export default function Contact() {
           </Link>
         </div>
       </div>
-      <div className="bg-white w-full lg:w-[80%] pb-16 lg:ml-48 relative shadow-md mt-72 sm:mt-60 lg:mt-0">
-        <div className="lg:ml-60 ml-8 pt-16">
+      <div className="bg-white w-full xl:w-[80%] pb-16 xl:ml-48 relative shadow-md mt-72 sm:mt-60 xl:mt-0">
+        <div className="xl:ml-60 ml-8 pt-16">
           <h1 className="text-2xl text-center mr-10 sm:mr-0 sm:text-left font-semibold">
-            Naručite ili samo pošaljite nam upit!
+            Naručite!
           </h1>
           <Form {...form}>
             <form
@@ -264,7 +264,7 @@ export default function Contact() {
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel className="text-primary text-xs">
-                          Adresa
+                          Ulica i broj
                         </FormLabel>
                         <FormControl className="border-b border-newBlack py-2">
                           <Input placeholder="Ulica od greba 8" {...field} />
@@ -326,11 +326,11 @@ export default function Contact() {
                 <div className="flex flex-col flex-1 pr-8">
                   <FormField
                     control={form.control}
-                    name="sekcijska_vrata"
+                    name="broj_prozora"
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel className="text-primary text-xs">
-                          Sekcijska vrata
+                          Broj prozora
                         </FormLabel>
                         <Select onValueChange={field.onChange}>
                           <FormControl className="border-b border-newBlack py-2">
@@ -360,11 +360,11 @@ export default function Contact() {
                 <div className="flex flex-col flex-1 pr-8">
                   <FormField
                     control={form.control}
-                    name="broj_prozora"
+                    name="sekcijska_vrata"
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel className="text-primary text-xs">
-                          Broj prozora
+                          Sekcijska vrata
                         </FormLabel>
                         <Select onValueChange={field.onChange}>
                           <FormControl className="border-b border-newBlack py-2">
@@ -443,11 +443,11 @@ export default function Contact() {
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
-                            <SelectItem value="jednostrijesno">
-                              Jednostrijesno
+                            <SelectItem value="jednostrešno">
+                              Jednostrešno
                             </SelectItem>
-                            <SelectItem value="dvostrijesno">
-                              Dvostrijesno
+                            <SelectItem value="dvostrešno">
+                              Dvostrešno
                             </SelectItem>
                           </SelectContent>
                         </Select>
@@ -501,7 +501,7 @@ export default function Contact() {
                             <SelectItem value="bijela">Bijela</SelectItem>
                             <SelectItem value="crvena">Crvena</SelectItem>
                             <SelectItem value="imitacija_crijepa">
-                              Imitacije crijepa
+                              Imitacija crijepa
                             </SelectItem>
                           </SelectContent>
                         </Select>
@@ -536,7 +536,7 @@ export default function Contact() {
                   />
                 </div>
               </div>
-              <div className="flex flex-col mt-8">
+              <div className="flex flex-col mt-8 mr-8">
                 <FormField
                   control={form.control}
                   name="message"
@@ -553,7 +553,7 @@ export default function Contact() {
                   )}
                 />
               </div>
-              <Button className="mt-8" type="submit">
+              <Button className="mt-8 w-40" type="submit">
                 Pošalji upit
               </Button>
             </form>

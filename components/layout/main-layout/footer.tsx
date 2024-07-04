@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FaFacebookF, FaXTwitter } from "react-icons/fa6";
+import { FaFacebookF } from "react-icons/fa6";
 import { IoLogoInstagram } from "react-icons/io5";
 
 export default function Footer() {
   return (
-    <footer className="text-sm overflow-y-auto bottom-0 left-0 text-newWhite py-12 bg-gradient-to-b from-primary/60 to-primary">
+    <footer className="text-sm overflow-y-auto bottom-0 left-0 text-newWhite py-12 bg-gradient-to-b from-primary/60 to-primary pt-[900px] sm:pt-36">
       <div className="px-3 md:px-10 lg:px-24 space-y-12 md:space-y-24">
         <div className="space-y-12 md:space-y-0 flex flex-col md:flex-row md:space-x-24">
           <div className="space-y-6 min-w-[180px]">
@@ -72,12 +72,6 @@ export default function Footer() {
                 className="ml-4 md:ml-0 hover:opacity-75 duration-300"
               >
                 Recenzije
-              </Link>
-              <Link
-                href="/blog"
-                className="ml-4 md:ml-0 hover:opacity-75 duration-300"
-              >
-                Blog
               </Link>
             </div>
             <div className="flex flex-col space-y-4">

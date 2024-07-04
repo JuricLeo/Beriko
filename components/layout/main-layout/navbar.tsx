@@ -61,6 +61,10 @@ export default function Navbar() {
       label: "Katalog proizvoda",
       href: "/products",
     },
+    {
+      label: "Recenzije",
+      href: "/reviews",
+    },
   ];
 
   const routesSmall = [
@@ -84,10 +88,6 @@ export default function Navbar() {
       label: "Recenzije",
       href: "/reviews",
     },
-    {
-      label: "Blog",
-      href: "/blog",
-    },
   ];
 
   return (
@@ -97,7 +97,6 @@ export default function Navbar() {
           pathname === "/about" ||
           pathname == "/gallery" ||
           pathname == "/reviews" ||
-          pathname == "/blog" ||
           scrolling
             ? "bg-[color:var(--light)] text-newBlack"
             : "bg-transparent"
@@ -120,19 +119,6 @@ export default function Navbar() {
                 {route.label}
               </Link>
             ))}
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center">
-                Ostalo <ChevronDown className="w-4 h-4 ml-2" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent>
-                <Link href="/reviews">
-                  <DropdownMenuItem>Recenzije</DropdownMenuItem>
-                </Link>
-                <Link href="/blog">
-                  <DropdownMenuItem>Blog</DropdownMenuItem>
-                </Link>
-              </DropdownMenuContent>
-            </DropdownMenu>
           </div>
         </div>
         <div className="flex items-center gap-x-4">

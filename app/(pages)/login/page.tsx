@@ -1,0 +1,61 @@
+"use client";
+
+import Image from "next/image";
+import { useState } from "react";
+import { signIn, signOut } from "next-auth/react";
+import { useRouter } from "next/navigation";
+
+export default function LoginPage() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const router = useRouter();
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError("");
+
+    const result = await signIn("credentials", {
+      redirect: false,
+      email,
+      password,
+    });
+
+    if (result?.error) {
+      setError("Pogrešan email ili lozinka");
+    } else {
+      router.push("/");
+    }
+  };
+
+  return (
+    <main className="my-28 lg:py-40 px-3 md:px-10 lg:px-24">
+      <div className="py-32 flex justify-center items-center rounded-md shadow-md bg-primary-foreground">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+          <Image src="/logo.png" alt="Logo" width={250} height={250} className="mb-4" />
+          <input
+            placeholder="Email"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="border px-4 py-2 rounded"
+            required
+          />
+          <input
+            placeholder="Lozinka"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="border px-4 py-2 rounded"
+            required
+          />
+          <button type="submit" className="bg-[color:var(--analogous)] w-32 m-auto py-2 rounded mt-4">
+            Login
+          </button>
+          <button onClick={() => signOut()}>Log Out</button>
+          {error && <p className="text-red-500 text-center mt-2">{error}</p>}
+        </form>
+      </div>
+    </main>
+  );
+}

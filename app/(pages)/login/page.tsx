@@ -2,29 +2,31 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { signIn, signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { supabase } from "@/utils/supabase/client";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [error, setError] = useState<string | null>(null);
   const router = useRouter();
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
-    setError("");
+    try {
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
 
-    const result = await signIn("credentials", {
-      redirect: false,
-      email,
-      password,
-    });
-
-    if (result?.error) {
-      setError("Pogrešan email ili lozinka");
-    } else {
-      router.push("/");
+      if (error) {
+        setError("Krivi email ili lozinka");
+      } else {
+        setError(null);
+        router.push("/");
+      }
+    } catch (err) {
+      setError("Došlo je do neočekivane greške");
     }
   };
 
@@ -42,7 +44,7 @@ export default function LoginPage() {
             required
           />
           <input
-            placeholder="Lozinka"
+            placeholder="Password"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -52,7 +54,6 @@ export default function LoginPage() {
           <button type="submit" className="bg-[color:var(--analogous)] w-32 m-auto py-2 rounded mt-4">
             Login
           </button>
-          <button onClick={() => signOut()}>Log Out</button>
           {error && <p className="text-red-500 text-center mt-2">{error}</p>}
         </form>
       </div>

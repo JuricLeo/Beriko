@@ -31,46 +31,6 @@ const images = [
     src: "/images/gallery/image5.jpeg",
     alt: "logo",
   },
-  {
-    src: "/images/gallery/image1.jpg",
-    alt: "logo",
-  },
-  {
-    src: "/images/gallery/image2.jpeg",
-    alt: "logo",
-  },
-  {
-    src: "/images/gallery/image3.jpeg",
-    alt: "logo",
-  },
-  {
-    src: "/images/gallery/image4.jpeg",
-    alt: "logo",
-  },
-  {
-    src: "/images/gallery/image5.jpeg",
-    alt: "logo",
-  },
-  {
-    src: "/images/gallery/image1.jpg",
-    alt: "logo",
-  },
-  {
-    src: "/images/gallery/image2.jpeg",
-    alt: "logo",
-  },
-  {
-    src: "/images/gallery/image3.jpeg",
-    alt: "logo",
-  },
-  {
-    src: "/images/gallery/image4.jpeg",
-    alt: "logo",
-  },
-  {
-    src: "/images/gallery/image5.jpeg",
-    alt: "logo",
-  },
 ];
 
 export default function Gallery() {

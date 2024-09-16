@@ -6,7 +6,6 @@ import Navbar from "@/components/layout/main-layout/navbar";
 import { Toaster } from "sonner";
 import CookieConsent from "@/components/layout/main-layout/cookie-consent";
 import Script from "next/script";
-import { Providers } from "@/providers";
 
 const font = Manrope({ subsets: ["latin"] });
 
@@ -27,13 +26,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
-        <Providers>
-          <Navbar />
-          <main className="mt-[92px]">{children}</main>
-          <Footer />
-          <CookieConsent />
-          <Toaster />
-        </Providers>
+        <Navbar />
+        <main className="mt-[92px]">{children}</main>
+        <Footer />
+        <CookieConsent />
+        <Toaster />
+
         {showStatCounterScript && (
           <Script id="statcounter-inline" strategy="afterInteractive">
             {`

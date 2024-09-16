@@ -8,7 +8,6 @@ import lgThumbnail from "lightgallery/plugins/thumbnail";
 import Image from "next/image";
 import Link from "next/link";
 import { PlusCircle } from "lucide-react";
-import { useSession } from "next-auth/react";
 
 const images = [
   {
@@ -34,8 +33,6 @@ const images = [
 ];
 
 export default function Gallery() {
-  const { data: session } = useSession();
-
   return (
     <section className="py-12 sm:py-24 lg:py-10 px-3 md:px-10 lg:px-24">
       <div>
@@ -44,11 +41,9 @@ export default function Gallery() {
           Pogledajte naš rad kojim se ponosimo!
         </p>
       </div>
-      {session && (
-        <button className="mb-4">
-          <PlusCircle size={30} className="text-[color:var(--analogous)]" />
-        </button>
-      )}
+      <button className="mb-4">
+        <PlusCircle size={30} className="text-[color:var(--analogous)]" />
+      </button>
       <LightGallery
         speed={500}
         plugins={[lgThumbnail]}

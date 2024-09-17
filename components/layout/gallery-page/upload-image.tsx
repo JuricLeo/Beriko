@@ -4,45 +4,17 @@ import { useState, useEffect } from "react";
 import { supabase } from "@/utils/supabase/client";
 import { Session } from "@supabase/supabase-js";
 import { cn } from "@/lib/utils";
-import { useUser } from "@supabase/auth-helpers-react";
 import { v4 as uuidv4 } from "uuid";
-
-interface Image {
-  name: string;
-  id: string;
-  size: number;
-  created_at: string;
-}
+import { Input } from "@/components/ui/input";
+import { PlusCircle } from "lucide-react";
 
 export default function UploadImage() {
   const [session, setSession] = useState<Session | null>(null);
-  const [images, setImages] = useState<Image[]>([]);
-  const user = useUser();
-
-  const CDNURL =
-    "https://cngclmfnevtclmshlwfa.supabase.co/storage/v1/object/public/gallery-images/public/";
 
   const logOut = async () => {
     await supabase.auth.signOut();
     window.location.reload();
   };
-
-  async function getImages() {
-    const { data, error } = await supabase.storage
-      .from("gallery-images")
-      .list("public/", {
-        limit: 100,
-        offset: 0,
-      });
-  
-    if (data !== null) {
-      // @ts-ignore
-      setImages(data);
-    } else {
-      alert("ERROR");
-      console.log(error);
-    }
-  }
 
   useEffect(() => {
     const checkSession = async () => {
@@ -53,7 +25,6 @@ export default function UploadImage() {
     };
 
     checkSession();
-    getImages(); // Fetch images immediately, regardless of session
   }, []);
 
   async function uploadImage(e: any) {
@@ -66,33 +37,20 @@ export default function UploadImage() {
 
     const { data, error } = await supabase.storage
       .from("gallery-images")
-      .upload("public/" + uuidv4(), file);
-
-    if (data) {
-      getImages(); // Fetch images again after uploading
-    } else {
-      console.log(error);
-    }
+      .upload("gallery/" + uuidv4(), file);
   }
 
   return (
-    <div>
+    <div className="py-12 sm:py-24 lg:py-10 px-3 md:px-10 lg:px-24">
       <div className={cn(session ? "flex flex-col" : "hidden")}>
-        <div>Hello, {session?.user.email}</div>
-        <button onClick={logOut}>Logout</button>
-        <input type="file" onChange={(e) => uploadImage(e)} />
+        <h2 className="mb-2">
+          Dodajte nove slike ovdje:
+          <i className="text-gray-400"> ( nakon dodavanja osvježite stranicu kako biste vidjeli promjene! )</i>
+        </h2>
+        <div className="grid w-full max-w-sm items-center gap-1.5">
+          <Input className="border rounded cursor-pointer" onChange={(e) => uploadImage(e)} id="picture" type="file" />
+        </div>
       </div>
-      {images.length > 0 ? (
-        images.map((image) => (
-          <img
-            key={image.id}
-            src={CDNURL + image.name}
-            alt={image.name}
-          />
-        ))
-      ) : (
-        <p>No images to display</p>
-      )}
     </div>
   );
 }

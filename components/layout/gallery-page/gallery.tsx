@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import LightGallery from "lightgallery/react";
 import "lightgallery/css/lightgallery.css";
 import "lightgallery/css/lg-zoom.css";
@@ -7,32 +8,101 @@ import "lightgallery/css/lg-thumbnail.css";
 import lgThumbnail from "lightgallery/plugins/thumbnail";
 import Image from "next/image";
 import Link from "next/link";
-import { PlusCircle } from "lucide-react";
+import { supabase } from "@/utils/supabase/client";
+import { Session } from "@supabase/supabase-js";
 
-const images = [
-  {
-    src: "/images/gallery/image1.jpg",
-    alt: "logo",
-  },
-  {
-    src: "/images/gallery/image2.jpeg",
-    alt: "logo",
-  },
-  {
-    src: "/images/gallery/image3.jpeg",
-    alt: "logo",
-  },
-  {
-    src: "/images/gallery/image4.jpeg",
-    alt: "logo",
-  },
-  {
-    src: "/images/gallery/image5.jpeg",
-    alt: "logo",
-  },
-];
+interface Image {
+  name: string;
+  id: string;
+  size: number;
+  created_at: string;
+}
+
+const CDNURL =
+  "https://cngclmfnevtclmshlwfa.supabase.co/storage/v1/object/public/gallery-images/gallery/";
 
 export default function Gallery() {
+  const [session, setSession] = useState<Session | null>(null);
+
+  useEffect(() => {
+    const checkSession = async () => {
+      const { data } = await supabase.auth.getSession();
+      if (data.session) {
+        setSession(data.session);
+      }
+    };
+
+    checkSession();
+  }, []);
+
+  const [images, setImages] = useState<Image[]>([]);
+
+  useEffect(() => {
+    getImages();
+  }, []);
+
+  async function getImages() {
+    const { data, error } = await supabase.storage
+      .from("gallery-images")
+      .list("gallery/", { limit: 100, offset: 0 });
+
+    if (data !== null) {
+      // @ts-ignore
+      setImages(data);
+    } else {
+      console.log(error);
+    }
+  }
+
+  async function deleteImage(imageName: any) {
+    const { error } = await supabase
+      .storage
+      .from('gallery-images')
+      .remove([ "gallery/" + imageName ])
+
+    if (error) {
+      alert(error);
+    } else {
+      alert("Slika izbrisana. Molimo osvježite stranicu kako biste vidjeli promjene.")
+    }
+  }
+
+  useEffect(() => {
+    if (!session) return;
+
+    const galleryItems = document.querySelectorAll(".gallery-item");
+
+    galleryItems.forEach((item, index) => {
+      const galleryItem = item as HTMLElement;
+      const btn = document.createElement("button");
+      btn.style.position = "absolute";
+      btn.style.top = "10px";
+      btn.style.right = "10px";
+      btn.style.zIndex = "10";
+      btn.style.background = "transparent";
+      btn.style.border = "none";
+      btn.style.cursor = "pointer";
+      btn.style.color = "red";
+
+      const trashIcon = document.createElement("div");
+      trashIcon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash-2 w-8 h-8"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>`;
+
+      btn.appendChild(trashIcon);
+
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        if (images[index]) {
+          console.log(images[index].name);
+          deleteImage(images[index].name);
+        }
+      });
+
+      galleryItem.style.position = "relative";
+      galleryItem.appendChild(btn);
+    });
+  }, [images, session]);
+
   return (
     <section className="py-12 sm:py-24 lg:py-10 px-3 md:px-10 lg:px-24">
       <div>
@@ -41,26 +111,28 @@ export default function Gallery() {
           Pogledajte naš rad kojim se ponosimo!
         </p>
       </div>
-      <button className="mb-4">
-        <PlusCircle size={30} className="text-[color:var(--analogous)]" />
-      </button>
-      <LightGallery
-        speed={500}
-        plugins={[lgThumbnail]}
-        elementClassNames="grid sm:grid-cols-2 md:grid-cols-3 gap-4"
-      >
-        {images.map(({ src, alt }) => (
-          <Link href={src} key={src}>
-            <Image
-              alt={alt}
-              src={src}
-              width={100}
-              height={100}
-              className="w-full block"
-            />
-          </Link>
-        ))}
-      </LightGallery>
+      {images.length > 0 ? (
+        <LightGallery
+          speed={500}
+          plugins={[lgThumbnail]}
+          elementClassNames="grid sm:grid-cols-2 md:grid-cols-3 gap-4"
+          getCaptionFromTitleOrAlt={false}
+        >
+          {images.map((image) => (
+            <Link className="gallery-item" href={CDNURL + image.name}>
+              <Image
+                alt={image.name}
+                src={CDNURL + image.name}
+                width={2000}
+                height={2000}
+                className="w-full block"
+              />
+            </Link>
+          ))}
+        </LightGallery>
+      ) : (
+        <p>Slike se učitavaju...</p>
+      )}
     </section>
   );
 }

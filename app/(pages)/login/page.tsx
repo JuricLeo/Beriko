@@ -34,7 +34,13 @@ export default function LoginPage() {
     <main className="my-28 lg:py-40 px-3 md:px-10 lg:px-24">
       <div className="py-32 flex justify-center items-center rounded-md shadow-md bg-primary-foreground">
         <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-          <Image src="/logo.png" alt="Logo" width={250} height={250} className="mb-4" />
+          <Image
+            src="/logo.png"
+            alt="Logo"
+            width={250}
+            height={250}
+            className="mb-4"
+          />
           <input
             placeholder="Email"
             type="email"
@@ -51,7 +57,10 @@ export default function LoginPage() {
             className="border px-4 py-2 rounded"
             required
           />
-          <button type="submit" className="bg-[color:var(--analogous)] w-32 m-auto py-2 rounded mt-4">
+          <button
+            type="submit"
+            className="bg-[color:var(--analogous)] w-32 m-auto py-2 rounded mt-4"
+          >
             Login
           </button>
           {error && <p className="text-red-500 text-center mt-2">{error}</p>}

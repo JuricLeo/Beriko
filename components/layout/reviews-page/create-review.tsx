@@ -12,9 +12,6 @@ export default function CreateReview() {
   const [session, setSession] = useState<Session | null>(null);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-  const [error, setError] = useState<string | null>(null);
-
-  const router = useRouter();
 
   useEffect(() => {
     const checkSession = async () => {
@@ -38,14 +35,12 @@ export default function CreateReview() {
         })
         .single();
 
-      if (error) {
-        setError("Ime, Prezime i Recenzija su obavezni!");
-      } else {
-        setError(null);
+      if (!error) {
+        alert("Recenzija uspješno napravljena. Molimo osvježite stranicu kako biste vidjeli promjene.")
         location.reload();
       }
     } catch (error) {
-      setError("Došlo je do neočekivane greške");
+      console.log("Došlo je do neočekivane greške");
     }
   };
 
@@ -71,7 +66,6 @@ export default function CreateReview() {
           <Button type="submit" className="w-40 ml-auto">
             Napravi
           </Button>
-          {error && <p className="text-red-500 text-center mt-2">{error}</p>}
         </form>
       </section>
     )

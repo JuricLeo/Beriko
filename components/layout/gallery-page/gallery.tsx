@@ -55,15 +55,17 @@ export default function Gallery() {
   }
 
   async function deleteImage(imageName: any) {
-    const { error } = await supabase
-      .storage
-      .from('gallery-images')
-      .remove([ "gallery/" + imageName ])
+    const { error } = await supabase.storage
+      .from("gallery-images")
+      .remove(["gallery/" + imageName]);
 
     if (error) {
       alert(error);
     } else {
-      alert("Slika izbrisana. Molimo osvježite stranicu kako biste vidjeli promjene.")
+      alert(
+        "Slika izbrisana. Molimo osvježite stranicu kako biste vidjeli promjene."
+      );
+      location.reload();
     }
   }
 
@@ -119,7 +121,11 @@ export default function Gallery() {
           getCaptionFromTitleOrAlt={false}
         >
           {images.map((image) => (
-            <Link className="gallery-item" href={CDNURL + image.name}>
+            <Link
+              className="gallery-item"
+              href={CDNURL + image.name}
+              key={image.name}
+            >
               <Image
                 alt={image.name}
                 src={CDNURL + image.name}

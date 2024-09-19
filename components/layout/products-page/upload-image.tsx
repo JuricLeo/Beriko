@@ -31,7 +31,7 @@ export default function UploadImage() {
 
     const { data, error } = await supabase.storage
       .from("gallery-images")
-      .upload("gallery/" + uuidv4(), file);
+      .upload("products/" + uuidv4(), file);
 
     if (data) {
       alert(
@@ -43,9 +43,15 @@ export default function UploadImage() {
 
   return (
     <div className="py-12 sm:py-24 lg:py-10 px-3 md:px-10 lg:px-24">
-      <div className={cn(session ? "flex items-center gap-2" : "hidden")}>
-        <h2>Dodajte nove slike ovdje:</h2>
-        <div className="cursor-pointer grid w-full max-w-sm items-center gap-1.5">
+      <div className={cn(session ? "flex flex-col" : "hidden")}>
+        <h2 className="mb-2">
+          Dodajte nove slike ovdje:
+          <i className="text-gray-400">
+            {" "}
+            ( nakon dodavanja osvježite stranicu kako biste vidjeli promjene! )
+          </i>
+        </h2>
+        <div className="grid w-full max-w-sm items-center gap-1.5">
           <Input
             className="border rounded cursor-pointer"
             onChange={(e) => uploadImage(e)}

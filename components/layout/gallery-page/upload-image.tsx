@@ -6,15 +6,9 @@ import { Session } from "@supabase/supabase-js";
 import { cn } from "@/lib/utils";
 import { v4 as uuidv4 } from "uuid";
 import { Input } from "@/components/ui/input";
-import { PlusCircle } from "lucide-react";
 
 export default function UploadImage() {
   const [session, setSession] = useState<Session | null>(null);
-
-  const logOut = async () => {
-    await supabase.auth.signOut();
-    window.location.reload();
-  };
 
   useEffect(() => {
     const checkSession = async () => {

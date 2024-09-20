@@ -112,7 +112,7 @@ export default function Contact() {
   const { form, onSubmit } = EmailForm();
 
   return (
-    <section className="relative py-12 sm:py-24 xl:py-10 px-3 md:px-10 xl:px-24 bg-gradient-to-b from-primary/30 to-primary/60 h-[78rem] sm:h-[64rem] xl:h-[45rem]">
+    <section id="contact" className="relative py-12 sm:py-24 xl:py-10 px-3 md:px-10 xl:px-24 bg-gradient-to-b from-primary/30 to-primary/60 h-[78rem] sm:h-[64rem] xl:h-[45rem]">
       <div className="bg-primary flex-col xl:hidden top-0 text-white w-[70%] h-[21rem] mt-10 absolute z-10 shadow-md p-8 mx-auto left-0 right-0">
         <h2 className="text-2xl text-center font-semibold">Kontakt Info</h2>
         <div className="mt-6 space-y-4">

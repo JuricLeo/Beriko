@@ -12,6 +12,7 @@ import Map from "@/components/layout/home-page/map";
 
 import dynamic from "next/dynamic";
 import { Skeleton } from "@/components/ui/skeleton";
+import LongText from "@/components/layout/home-page/long-text";
 
 const LazyMap = dynamic(
   () => import("@/components/layout/home-page/leaflet-map"),
@@ -29,6 +30,7 @@ export default function Home() {
   return (
     <main>
       <Hero />
+      <LongText />
       <FeatureStrenght />
       <QualitySection />
       <ImageSlider />

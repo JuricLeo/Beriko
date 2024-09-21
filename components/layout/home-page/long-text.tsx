@@ -11,7 +11,7 @@ import WhatToKnow from "./long-text/what-to-know";
 
 export default function LongText() {
   return (
-    <section>
+    <section className="my-8">
       <Hazzard />
       <WhatToKnow />
       <Entrepreneur />

@@ -7,15 +7,27 @@ export async function POST(req: Request) {
   const body = await req.json();
 
   const message = `
-    Name: ${body.name}\r\n
-    Email: ${body.email}\r\n
-    Message: ${body.message}
+    <strong>Ime i Prezime:</strong> ${body.ime}<br>
+    <strong>Email:</strong> ${body.email}<br>
+    <strong>Telefon:</strong> ${body.telefon}<br>
+    <strong>Grad:</strong> ${body.grad}<br>
+    <strong>Ulica i broj:</strong> ${body.ulica}<br>
+    <strong>Predmet:</strong> ${body.predmet}<br>
+    <strong>Dimenzije (cm) (širina x duljina x visina):</strong> ${body.dimenzije}<br>
+    <strong>Broj prozora:</strong> ${body.broj_prozora}<br>
+    <strong>Broj sekcijskih vrata:</strong> ${body.sekcijska_vrata}<br>
+    <strong>Broj jednokrilnih vrata:</strong> ${body.jednokrilna_vrata}<br>
+    <strong>Izgled krovišta:</strong> ${body.izgled_krovista}<br>
+    <strong>Debljina termopanela (mm):</strong> ${body.debljina_termopanela}<br>
+    <strong>Boja krovišta:</strong> ${body.boja_krovista}<br>
+    <strong>Boja zidova:</strong> ${body.boja_zidova}<br>
+    <strong>Poruka:</strong> ${body.poruka}
   `;
   
   const data = {
     to: "same-mail",
     from: "same-mail",
-    subject: "New web form message!",
+    subject: "Novi upit s web stranice",
     text: message,
     html: message.replace(/\r\n/g, "<br>"),
   };

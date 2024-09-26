@@ -30,7 +30,7 @@ export default function RootLayout({
         <main className="mt-[92px]">{children}</main>
         <Footer />
         <CookieConsent />
-        <Toaster />
+        <Toaster position="top-center" richColors />
 
         {showStatCounterScript && (
           <Script id="statcounter-inline" strategy="afterInteractive">

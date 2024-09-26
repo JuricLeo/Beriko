@@ -9,7 +9,7 @@ export default function FeatureStrenght() {
           alt="Montažne kućice"
           width={1600}
           height={1600}
-          className="hidden xl:block w-[500px] h-[350px] 2xl:w-[700px] 2xl:h-[800px]"
+          className="hidden xl:block w-[500px] h-[350px] 2xl:w-[700px] 2xl:h-[500px]"
         />
         <div className="space-y-10 xl:pl-24 justify-center xl:w-[70%]">
           <h1 className="text-right ml-auto 2xl:text-6xl text-4xl sm:text-5xl font-semibold sm:min-w-[400px] max-w-[700px]">

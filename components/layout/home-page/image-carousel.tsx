@@ -9,12 +9,24 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { supabase } from "@/utils/supabase/client";
+
+interface Image {
+  name: string;
+  id: string;
+  size: number;
+  created_at: string;
+}
+
+const CDNURL =
+  "https://cngclmfnevtclmshlwfa.supabase.co/storage/v1/object/public/gallery-images/gallery/";
 
 export default function ImageSlider() {
   const carouselRef = useRef(null);
   const plugin = useRef(Autoplay({ delay: 5000, stopOnInteraction: true }));
+  const [images, setImages] = useState<Image[]>([]);
 
   const restartAutoplay = () => {
     if (plugin.current) {
@@ -22,13 +34,28 @@ export default function ImageSlider() {
     }
   };
 
-  const images = [
-    "/images/home-carousel/image1.jpg",
-    "/images/home-carousel/image2.jpeg",
-    "/images/home-carousel/image3.jpeg",
-    "/images/home-carousel/image4.jpeg",
-    "/images/home-carousel/image5.jpeg",
-  ];
+  useEffect(() => {
+    getImages();
+  }, []);
+
+  async function getImages() {
+    const { data, error } = await supabase.storage
+      .from("gallery-images")
+      .list("gallery/", { sortBy: { column: 'created_at', order: 'desc' } });
+  
+    if (data !== null) {
+      const sortedData = data.sort((a, b) => 
+        new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+      );
+      
+      const latestFive = sortedData.slice(0, 5);
+      
+      // @ts-ignore
+      setImages(latestFive);
+    } else {
+      console.log(error);
+    }
+  }
 
   return (
     <section className="flex justify-center px-3 py-12 bg-primary/30">
@@ -51,7 +78,7 @@ export default function ImageSlider() {
                   <CardContent className="flex aspect-video items-center justify-center p-0">
                     <div className="relative w-full h-full">
                       <Image
-                        src={image}
+                        src={CDNURL + image.name}
                         alt="Carousel image"
                         fill
                         style={{ objectFit: "cover" }}

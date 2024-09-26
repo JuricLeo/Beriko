@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input";
 
 export default function UploadImage() {
   const [session, setSession] = useState<Session | null>(null);
+  const [fileCount, setFileCount] = useState<number>(0);
 
   useEffect(() => {
     const checkSession = async () => {
@@ -18,11 +19,27 @@ export default function UploadImage() {
       }
     };
 
+    const getFileCount = async () => {
+      const { data, error } = await supabase.storage
+        .from("gallery-images")
+        .list("gallery");
+
+      if (data) {
+        setFileCount(data.length);
+      }
+    };
+
     checkSession();
+    getFileCount();
   }, []);
 
   async function uploadImage(e: any) {
     let file = e.target.files[0];
+
+    if (file.size > 10 * 1024 * 1024) {
+      alert("Datoteka je veća od 10MB!");
+      return;
+    }
 
     if (!session?.user.id) {
       console.log("User ID is not defined");
@@ -51,7 +68,11 @@ export default function UploadImage() {
             onChange={(e) => uploadImage(e)}
             id="picture"
             type="file"
+            disabled={fileCount >= 40}
           />
+          {fileCount >= 40 && (
+            <p className="text-red-500">Ne možete dodati više od 40 slika.</p>
+          )}
         </div>
       </div>
     </div>

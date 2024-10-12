@@ -12,8 +12,8 @@ export default function Team() {
         <Image
           src="/images/bernard.png"
           alt="Direktor"
-          width={100}
-          height={100}
+          width={1920}
+          height={1920}
           className="w-[500px]"
         />
         <div className="ml-10">

@@ -5,10 +5,10 @@ export default function FeatureStrenght() {
     <section className="py-12 sm:py-24 lg:py-10 px-3 md:px-10 lg:px-24 bg-primary/30">
       <div className="flex items-center justify-center">
         <Image
-          src="/images/feature-strength.jpg"
+          src="/images/feature-strenght.jpeg"
           alt="Montažne kućice"
-          width={1600}
-          height={1600}
+          width={1920}
+          height={1920}
           className="hidden xl:block w-[500px] h-[350px] 2xl:w-[700px] 2xl:h-[500px]"
         />
         <div className="space-y-10 xl:pl-24 justify-center xl:w-[70%]">

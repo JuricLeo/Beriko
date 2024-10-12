@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import { twMerge } from "tailwind-merge";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 
 export function Timeline() {
@@ -69,8 +68,7 @@ const dummyContent = [
       </div>
     ),
     badge: "28.10.2003.",
-    image:
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=3540&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "/images/timeline/timeline1.jpg",
   },
   {
     title: "PRVI RAD",
@@ -87,9 +85,8 @@ const dummyContent = [
         </p>
       </div>
     ),
-    badge: "28.10.2003.",
-    image:
-      "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&q=80&w=3540&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    badge: "15.11.2003.",
+    image: "/images/timeline/timeline2.jpg",
   },
   {
     title: "100. ZADOVOLJEN KUPAC",
@@ -102,17 +99,16 @@ const dummyContent = [
         izazov, već prilika za stvaranje nečeg izvanrednog.
       </p>
     ),
-    badge: "28.10.2003.",
-    image:
-      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80&w=3506&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    badge: "03.06.2007.",
+    image: "/images/timeline/timeline3.png",
   },
   {
     title: "DANAS",
     description: (
       <div className="space-y-3">
         <p className="leading-7">
-          Kroz svaki korak našeg puta, ostajemo predani ideji da tehnologija
-          treba biti pristupačna svima. Za bolju budućnost - jedan u kojem su
+          Kroz svaki korak našeg puta, ostajemo predani ideji da je kvaliteta
+          izrade na prvom mjestu. Za bolju budućnost - jedan u kojem su
           inovacije dostupne svima, potičući rast i napredak u zajednici. Mi
           nismo samo tvrtka. Mi smo pokretač promjena.
         </p>
@@ -120,6 +116,6 @@ const dummyContent = [
       </div>
     ),
     image:
-      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80&w=3506&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "/images/timeline/timeline4.jpeg",
   },
 ];

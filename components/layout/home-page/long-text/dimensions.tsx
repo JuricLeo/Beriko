@@ -24,7 +24,7 @@ export default function Dimensions() {
             </div>
             <Image
               className="w-[300px] h-[75px] mx-auto"
-              src="/images/long-text/potpis.png"
+              src="https://utfs.io/f/KEu7z70yXtIh8k4eWbySeWkuAlRcKazbEojGsgDmyxPMd9n7"
               alt="ice"
               width={1920}
               height={300}

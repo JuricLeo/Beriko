@@ -65,7 +65,7 @@ export default function Reviews() {
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-left mt-10">
         {reviews.map((review) => (
-          <div className="flex flex-col">
+          <div className="flex flex-col" key={review.id}>
             <div className="shadow-xl rounded-xl h-fit" key={review.id}>
               <p className="bg-[color:var(--light)] p-4 rounded-xl">
                 &quot;{review.description}&quot;

@@ -27,7 +27,7 @@ export default function Secret() {
           <Image
             className="w-[400px] h-[300px] mx-auto"
             alt="hazzard"
-            src="/images/long-text/secret.jpg"
+            src="https://utfs.io/f/KEu7z70yXtIhkn0SfKag3ZgeQMExhbDftVPAJoSC4YGFTdz7"
             width={1920}
             height={300}
           />

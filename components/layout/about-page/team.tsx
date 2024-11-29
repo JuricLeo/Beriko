@@ -10,7 +10,7 @@ export default function Team() {
       <hr className="w-40 h-2 mx-auto mt-5 mb-16 bg-primary border-0 rounded   " />
       <div className="flex items-top">
         <Image
-          src="/images/bernard.png"
+          src="https://utfs.io/f/KEu7z70yXtIhhyFlr8KGxPQSgX9rIjLN7Yob3seHv6tBKmUV"
           alt="Direktor"
           width={1920}
           height={1920}

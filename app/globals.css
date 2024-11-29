@@ -8,38 +8,38 @@ input:focus {
 }
 
 .reviews-cta-section-bg {
-  background-image: url("/haikei/blurry-gradient-haikei1.svg");
+  background-image: url("https://utfs.io/f/KEu7z70yXtIhmrxZO8gdzSQAocj0Hm2iv8nBVl3OYwJtC4gX");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .reviews-hero-section-bg {
-  background-image: url("/haikei/circle-scatter-haikei.svg");
+  background-image: url("https://utfs.io/f/KEu7z70yXtIhnKvybrGeFJd69tmOkD8o0Rpx54VXUcIr2f7i");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .first-product-bg {
-  background-image: url("/haikei/blob-scene-haikei.svg");
+  background-image: url("https://utfs.io/f/KEu7z70yXtIh6Olk1czUNH8ZyG9Qf4jFVOJtYKzh0nc2aeM7");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .second-product-bg {
-  background-image: url("/haikei/blob-scene-haikei2.svg");
+  background-image: url("https://utfs.io/f/KEu7z70yXtIhVP0VWo5rnaDOg5KxZ0UubA3evjpzymJXc612");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .contact-hero-section-bg {
-  background-image: url("/images/hero-images/contact-header-img.jpg");
+  background-image: url("https://utfs.io/f/KEu7z70yXtIh6sBI2yzUNH8ZyG9Qf4jFVOJtYKzh0nc2aeM7");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 @media(max-width: 1000px) {
   .contact-hero-section-bg {
-    background-image: url("/images/hero-images/contact-header-img.jpg");
+    background-image: url("https://utfs.io/f/KEu7z70yXtIh6sBI2yzUNH8ZyG9Qf4jFVOJtYKzh0nc2aeM7");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -47,14 +47,14 @@ input:focus {
 }
 
 .contact-form-section-bg {
-  background-image: url("/kontakt-forma-bg.png");
+  background-image: url("https://utfs.io/f/KEu7z70yXtIhm0u0OTdzSQAocj0Hm2iv8nBVl3OYwJtC4gXI");
   background-repeat: no-repeat;
   background-size: contain;
 }
 
 .hero-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("/images/hero-images/hero-garage.jpeg");
+    url("https://utfs.io/f/KEu7z70yXtIhWH6cnWLFc2DBTKOSMgPJpEiu0VqrwCnexbN9");
   height: 50%;
   background-position: center;
   background-repeat: no-repeat;
@@ -64,7 +64,7 @@ input:focus {
 
 .products-hero-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("/images/hero-images/products-hero.jpg");
+    url("https://utfs.io/f/KEu7z70yXtIhdhOdaW7vHulxycoSbwMR0QphBZeTN8ALatjO");
   height: 50%;
   background-position: center;
   background-repeat: no-repeat;

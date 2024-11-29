@@ -17,7 +17,7 @@ export default function WhatToKnow() {
           </p>
           <Image
             className="w-[700px] h-[300px] mx-auto"
-            src="/images/long-text/what-to-know.jpg"
+            src="https://utfs.io/f/KEu7z70yXtIhKmU5Iz0yXtIh7G5ljWY38NgizvsLonBkbCMJ"
             alt="ice"
             width={1920}
             height={300}
@@ -55,7 +55,7 @@ export default function WhatToKnow() {
           </div>
           <Image
             className="w-[400px] h-[300px] mx-auto"
-            src="/images/long-text/what-to-know2.jpg"
+            src="https://utfs.io/f/KEu7z70yXtIhTfqojAvGVc2OLDv3EXmZF6oq1hapjNdnwlT0"
             alt="ice"
             width={1920}
             height={300}

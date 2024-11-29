@@ -56,7 +56,7 @@ export default function LittleThings() {
           <Image
             className="w-[700px] h-[300px] mx-auto"
             alt="hazzard"
-            src="/images/long-text/little-things.jpg"
+            src="https://utfs.io/f/KEu7z70yXtIhqO81cgIy8mSBnw36iXAZMdtf97DWFEHhbI2J"
             width={1920}
             height={300}
           />

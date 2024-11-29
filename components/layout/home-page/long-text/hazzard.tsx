@@ -39,7 +39,7 @@ export default function Hazzard() {
             <Image
               className="w-[300px] h-[300px] mx-auto md:mx-0"
               alt="hazzard"
-              src="/images/long-text/snow-storm.jpg"
+              src="https://utfs.io/f/KEu7z70yXtIhQx9TrbeCj5sfX0ZqmwURzxAkFrOicTn48Dbv"
               width={1920}
               height={300}
             />
@@ -60,7 +60,7 @@ export default function Hazzard() {
             <Image
               className="w-[300px] h-[300px] mx-auto md:mx-0"
               alt="damaged-car"
-              src="/images/long-text/damaged-car.jpg"
+              src="https://utfs.io/f/KEu7z70yXtIhc1M7YbeoPSUYDu1N3BZKXtMmd4xhaHczEe7y"
               width={1920}
               height={300}
             />
@@ -80,7 +80,7 @@ export default function Hazzard() {
             <Image
               className="w-[250px] h-[400px] md:w-[300px] md:h-[300px] mx-auto md:mx-0"
               alt="stop"
-              src="/images/long-text/stop.jpg"
+              src="https://utfs.io/f/KEu7z70yXtIhOocjC9jUh3rcWXTD7PRVmnIlsUZKtJobYuHp"
               width={1920}
               height={300}
             />
@@ -103,7 +103,7 @@ export default function Hazzard() {
             <Image
               className="w-[400px] h-[300px] mx-auto md:mx-0"
               alt="ice"
-              src="/images/long-text/ice.jpg"
+              src="https://utfs.io/f/KEu7z70yXtIhHNhp8wSlTeKSurl5Qjp9wJyd83EiVLzN1oqF"
               width={1920}
               height={300}
             />

@@ -10,7 +10,7 @@ export default function HeroSection() {
             width={700}
             height={300}
             alt=""
-            src="/images/happy-customer.jpg"
+            src="https://utfs.io/f/KEu7z70yXtIhKMdoPq0yXtIh7G5ljWY38NgizvsLonBkbCMJ"
             className="rounded-tl-md rounded-bl-md rounded-tr-md rounded-br-md lg:rounded-tr-none lg:rounded-br-none w-[700px]"
           />
         </div>

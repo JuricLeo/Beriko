@@ -96,7 +96,7 @@ export default function Navbar() {
       >
         <div className="flex items-center">
           <Link href="/">
-            <Image alt="Beriko" src="/logo.png" className="w-[200px]" width={1920} height={1920} />
+            <Image alt="Beriko" src="https://utfs.io/f/KEu7z70yXtIh8k4eWbySeWkuAlRcKazbEojGsgDmyxPMd9n7" className="w-[200px]" width={1920} height={1920} />
           </Link>
           <div className="gap-x-10 mr-10 hidden lg:flex">
             {routesBig.map((route) => (

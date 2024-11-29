@@ -68,7 +68,7 @@ const dummyContent = [
       </div>
     ),
     badge: "28.10.2003.",
-    image: "/images/timeline/timeline1.jpg",
+    image: "https://utfs.io/f/KEu7z70yXtIhsg9ELXVaMQvp5O7boszN3y0qwneKCJF1RxLt",
   },
   {
     title: "PRVI RAD",
@@ -86,7 +86,7 @@ const dummyContent = [
       </div>
     ),
     badge: "15.11.2003.",
-    image: "/images/timeline/timeline2.jpg",
+    image: "https://utfs.io/f/KEu7z70yXtIhE0q4OLb06MjBEZ1dtKrcDSCvHb3V97wqGpQx",
   },
   {
     title: "100. ZADOVOLJEN KUPAC",
@@ -100,7 +100,7 @@ const dummyContent = [
       </p>
     ),
     badge: "03.06.2007.",
-    image: "/images/timeline/timeline3.png",
+    image: "https://utfs.io/f/KEu7z70yXtIhrFb7tdwOwqK19xHGP8diYUVcFpthZRS7LT6J",
   },
   {
     title: "DANAS",
@@ -116,6 +116,6 @@ const dummyContent = [
       </div>
     ),
     image:
-      "/images/timeline/timeline4.jpeg",
+      "https://utfs.io/f/KEu7z70yXtIhuYqNWY9EPsNeCHgB6kQVKIf5XSocj18zuhqO",
   },
 ];

@@ -22,7 +22,7 @@ export default function Footer() {
         <div className="space-y-12 md:space-y-0 flex flex-col md:flex-row md:space-x-24">
           <div className="space-y-6 min-w-[180px]">
             <Image
-              src="/logo.png"
+              src="https://utfs.io/f/KEu7z70yXtIh8k4eWbySeWkuAlRcKazbEojGsgDmyxPMd9n7"
               width={200}
               height={200}
               alt="Logo"
